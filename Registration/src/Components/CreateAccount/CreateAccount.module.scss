@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
+}
+body{
+  margin: 0px;
+  font-family: 'Quicksand';
+}
+.createAccountBar {
+    background-color: #3c4e62;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .createAccountBar img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 2.8rem;
+  }
+  .createAccountBar img:hover {
+    cursor: pointer;
+  }
+  .createAccountTitle {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: normal;
+    height: 2rem;
+    text-align: center;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+  }
+  .createAccountButton {
+    width: 90px;
+height: 28px;
+    font-size: 14px;
+    color: #1f2834;
+    background-color: #3fd28b;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0rem 0.3rem 0.5rem rgba(0, 0, 0, 0.2392156863);
+    border: none;
+    border-radius: 0.2rem;
+    opacity: 1;
+  }
+  .createAccountButton:hover {
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+  }
+  .cancelButton {
+    margin-left: auto;
+  }
+  .createButton {
+    margin-left: 1.6rem;
+    margin-right: 2.4rem;
+  }
+  .active {
+    background: #3fd28b 0% 0% no-repeat padding-box;
+  }
+  .inactive {
+    background: rgba(63, 210, 139, 0.2392156863) 0% 0% no-repeat padding-box;
+  }
+  @media only screen and (max-width: 800px) {
+    .create-account-bar .create-account-bar {
+      font-size: 60%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .create-account-bar .create-account-bar {
+      font-size: 53%;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    .create-account-bar .create-account-bar {
+      font-size: 50%;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    .create-account-bar .create-account-bar {
+      font-size: 45%;
+    }
+  }
+  @media only screen and (max-width: 270px) {
+    .create-account-bar .create-account-bar {
+      font-size: 35%;
+    }
+  }
+  @media only screen and (max-width: 200px) {
+    .create-account-bar .create-account-bar {
+      font-size: 30%;
+    }
+  }
+  @media only screen and (max-width: 170px) {
+    .create-account-bar .create-account-bar {
+      font-size: 27%;
+    }
+  }
+  @media only screen and (max-width: 150px) {
+    .create-account-bar .create-account-bar {
+      font-size: 23%;
+    }
+  }
+  @media only screen and (max-width: 130px) {
+    .create-account-bar .create-account-bar {
+      font-size: 20%;
+    }
+  }

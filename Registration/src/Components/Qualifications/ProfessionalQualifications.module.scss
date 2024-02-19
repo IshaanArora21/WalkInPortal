@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
+}
+body{
+  font-family: 'Quicksand';
+}
+  .dropDown {
+    background-color: rgba(219, 239, 255, 1);
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  .dropDown span {
+    margin-left: 16px;
+  }
+  
+  .dd_img_container {
+    height: 56px;
+    width: 32px;
+    border-left: 2px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .rotate180 {
+    transform: rotate(180deg);
+  }
+  
+  .mb-8 {
+    margin-bottom: 8px;
+  }
+  
+  .step_inputs {
+    background-color: rgb(255,255,255,1);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .w_small {
+    width: 180px;
+  }
+  
+  .double_input_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .single_input_container {
+    flex: 1;
+  }
+  
+  .specific_width {
+    width: 452px;
+  }
+  
+  .flex_16 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .single_input_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .single_input_container label {
+    color: rgba(102, 102, 102, 1);
+    font-size: 12px;
+  }
+  
+  .single_input_container input,
+  .single_input_container select {
+    border: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+    padding-bottom: 4px;
+    font-size: 16px;
+    font-family: 'Quicksand';
+    font-weight: 600;
+  }
+  
+  .single_input_container input:focus {
+    outline: none;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  .w_small {
+    width: 180px;
+  }
+  
+  .applicant_type_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .applicant_type {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+    height: 24px;
+  }
+  
+  .applicant_type input[type="radio"] {
+    width: 20px;
+    height: 24px;
+    accent-color: rgba(31, 122, 84, 1);
+  }
+  
+  .applicant_type label {
+    font-size: 16px;
+    color: rgba(34, 34, 34, 1);
+  }
+  
+  .technologies_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .technologies_container_label {
+    font-size: 12px;
+    color: rgba(102, 102, 102, 1);
+  }
+  
+  .single_checkbox_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 9px;
+  }
+  
+  .single_checkbox_container input[type="checkbox"] {
+    background-color: black;
+    padding: 10px;
+    width: 18px;
+    height: 24px;
+    margin: 0px;
+    accent-color:  rgba(31, 122, 84, 1);
+  }
+  
+  .radio_container_label {
+    font-size: 12px;
+    color: rgba(102, 102, 102, 1);
+    padding-bottom: 12px;
+  }
+  
+  .radio_container_options {
+    margin-top: 13px;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .single_radio_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .single_radio_container input[type="radio"] {
+    width: 20px;
+    height: 24px;
+    accent-color: rgba(31, 122, 84, 1);
+    margin: 0px;
+  }
+ .step_moving_btn {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 16px;
+     margin: 32px 0px 21px;
+   }
+   .next_previous_btn {
+     width: 90px;
+     height: 28px;
+     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+     border-radius: 2px;
+     border: none;
+     background-color: rgba(63, 210, 139, 1);
+     color:rgba(31, 40, 52, 1);
+     font-weight: 600;
+     font-size: 14px;
+     font-family: 'Quicksand';
+   }

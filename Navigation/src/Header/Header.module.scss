@@ -1,0 +1,41 @@
+$color_1: rgb(255,255,255,1);
+$font-family: 'Quicksand';
+
+@font-face {
+	font-family: 'Quicksand';
+	src: url('/public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
+}
+body {
+	margin: 0px;
+	font-family: $font-family;
+}
+.Header {
+	height: 56px;
+	background: rgba(37, 49, 63, 1);
+	background-repeat: no-repeat;
+	background-image: url('../../public/assets/header\ pattern\ svg.svg');
+	background-size: cover;
+	background-blend-mode: overlay;
+	border-bottom: 2px solid rgba(58, 199, 236, 1);
+	display: flex;
+	justify-content: space-between;
+}
+.headerLogo {
+	padding: 14px 10px;
+	cursor: pointer;
+}
+.userLogin {
+	padding: 9px 9px;
+	border-radius: 50%;
+	border: 2px solid rgba(63, 210, 139, 1);
+	height: 30px;
+	width: 30px;
+	font-family: $font-family_1;
+	color: rgb(255,255,255,1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-weight: 500;
+}
+

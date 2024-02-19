@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
+}
+body{
+    font-family: 'Quicksand';
+}
+.main_conatainer {
+    background-color: rgba(238, 238, 238, 1);
+    padding: 26px 24px;
+    min-height: 84vh;
+    display: flex;
+    justify-content: normal;
+    align-items: normal;
+    flex-direction: column;
+    gap: 24px;
+}
+.main_conatainer .hide {
+    display: none;
+}
+.main_conatainer .rotate180 {
+    transform: rotate(180deg);
+}
+.main_conatainer .go_up_component {
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: rgba(63, 210, 139, 1);
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.main_conatainer .list_container {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24);
+}
+.main_conatainer .list_container .job_container {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 16px;
+    position: relative;
+}
+.main_conatainer .list_container .job_container h1 {
+    font-size: 18px;
+    margin: 0px;
+    color: rgba(31, 122, 84, 1);
+}
+.main_conatainer .list_container .job_container .apply_in_job {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: rgba(209, 1, 7, 1);
+    font-size: 12px;
+    border-radius: 2px;
+}
+.main_conatainer .list_container .job_container .apply_in_job .apply_btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(63, 210, 139, 1);
+    color: rgba(37, 49, 63, 1);
+    width: 73px;
+    height: 28px;
+    border: 0px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+    font-family: quicksand;
+    font-weight: 600;
+}
+.main_conatainer .list_container .job_container .apply_in_job .apply_btn:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+.main_conatainer .list_container .job_container .date_time_container {
+    margin-top: 16px;
+    display: flex;
+    justify-content: normal;
+    align-items: normal;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(102, 102, 102, 1);
+    font-size: 12px;
+}
+.main_conatainer .list_container .job_container .date_time_container .date_time_value {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 16px;
+    color: rgba(34, 34, 34, 1);
+    font-size: 14px;
+}
+.main_conatainer .list_container .job_container .date_time_container .date_time_value .splitter {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    height: 12px;
+    width: 0px;
+}
+.main_conatainer .list_container .job_container .date_time_container .date_time_value .location {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+.main_conatainer .list_container .job_container hr {
+    margin-top: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    flex: 1;
+}
+.main_conatainer .list_container .job_container .job_role_title {
+    font-size: 12px;
+    color: rgba(102, 102, 102, 1);
+    margin-top: 16px;
+}
+.main_conatainer .list_container .job_container .job_role_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+.main_conatainer .list_container .job_container .job_role_container .job_splitter {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    height: 12px;
+    width: 0px;
+}
+.main_conatainer .list_container .job_container .job_role_container .single_job {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+}
+.main_conatainer .list_container .job_container .job_role_container .single_job img {
+    border: 1px solid rgba(34, 34, 34, 1);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 4px;
+}
+.main_conatainer .list_container .job_container .extra_roles_container {
+    margin-top: 16px;
+}
+.main_conatainer .list_container .job_container .extra_roles_container .extra_roles {
+    background-color: rgba(238, 221, 107, 1);
+    border-radius: 9px;
+    letter-spacing: 0.25px;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+.main_conatainer .dropDown {
+    background-color: rgba(219, 239, 255, 1);
+    cursor: pointer;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_conatainer .dropDown > span {
+    margin-left: 16px;
+}
+.main_conatainer .dropDown .dd_img_container {
+    height: 56px;
+    width: 32px;
+    border-left: 2px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.main_conatainer .time_slot_container {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24);
+}
+.main_conatainer .time_slot_container > h1 {
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+.main_conatainer .time_slot_container .radio_container .radio_container_label {
+    font-size: 12px;
+    color: rgba(102, 102, 102, 1);
+    padding-bottom: 12px;
+}
+.main_conatainer .time_slot_container .radio_container .radio_container_options {
+    margin-top: 13px;
+    display: flex;
+    align-items: normal;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.main_conatainer .time_slot_container .radio_container .radio_container_options .single_radio_container {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+}
+.main_conatainer .time_slot_container .radio_container .radio_container_options .single_radio_container input[type="radio"] {
+    width: 20px;
+    height: 24px;
+    accent-color: rgba(31, 122, 84, 1);
+    margin: 0px;
+}
+.main_conatainer .time_slot_container hr {
+    margin: 16px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.main_conatainer .time_slot_container .technologies_container {
+    display: flex;
+    align-items: normal;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.main_conatainer .time_slot_container .technologies_container .technologies_container_label {
+    font-size: 12px;
+    color: rgba(102, 102, 102, 1);
+}
+.main_conatainer .time_slot_container .technologies_container .single_checkbox_container {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    gap: 9px;
+}
+.main_conatainer .time_slot_container .technologies_container .single_checkbox_container input[type="checkbox"] {
+    background-color: black;
+    padding: 10px;
+    width: 18px;
+    height: 24px;
+    margin: 0px;
+    accent-color: rgba(31, 122, 84, 1);
+}
+.main_conatainer .time_slot_container .upload_resume_container span {
+    color: rgba(31, 122, 84, 1);
+    font-size: 14px;
+}
+.main_conatainer .time_slot_container .upload_resume_container .input_file_label {
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: rgba(31, 122, 84, 1);
+}
+.main_conatainer .time_slot_container .upload_resume_container #input_file {
+    display: none;
+}
+.main_conatainer .time_slot_container .upload_resume_container #input_file::-webkit-file-upload-button {
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+}
+.main_conatainer .single_job_container {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.main_conatainer .single_job_container .job_container_info {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 16px;
+    overflow: hidden;
+}
+.main_conatainer .single_job_container .job_container_info .job_info {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    flex-direction: column;
+    gap: 16px;
+}
+.main_conatainer .single_job_container .job_container_info .job_info .job_header {
+    color: rgba(102, 102, 102, 1);
+    font-size: 12px;
+    width: 480px;
+}
+.main_conatainer .single_job_container .job_container_info .job_info .job_value {
+    font-size: 14px;
+}
+.main_conatainer .single_job_container .job_container_info .job_info .job_value div {
+    line-height: 24.5px;
+}
+.main_conatainer .single_job_container .job_container_info hr {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    margin: 16px 0px;
+}
+@media screen and (max-width: 376px) {
+    .main_conatainer {
+        padding-bottom: 76px;
+        overflow-y: hidden;
+   }
+    .main_conatainer .go_up_component {
+        bottom: 48px;
+   }
+    .main_conatainer .list_container .job_container .job_role_container {
+        display: flex;
+        align-items: normal;
+        justify-content: center;
+        flex-direction: column;
+   }
+    .main_conatainer .list_container .job_container .apply_in_job {
+        position: fixed;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+        color: rgba(209, 1, 7, 1);
+        font-size: 12px;
+        border-radius: 2px;
+        width: 100vw;
+        overflow: hidden;
+   }
+    .main_conatainer .list_container .job_container .apply_in_job .apply_btn {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(63, 210, 139, 1);
+        color: rgba(37, 49, 63, 1);
+        width: 100vw;
+        height: 28px;
+        border: 0px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+        border-radius: 2px;
+        font-family: quicksand;
+        font-weight: 600;
+   }
+    .main_conatainer .screen_mobile {
+        display: none;
+   }
+}

@@ -1,0 +1,25 @@
+$color_1: rgba(63, 210, 139, 1);
+$font-family: 'Quicksand';
+
+@font-face {
+	font-family: 'Quicksand';
+	src: url('../../public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
+}
+body {
+	margin: 0px;
+	font-family: $font-family;
+}
+.footer {
+	display: flex;
+	margin-left: 300px;
+	color: rgba(63, 210, 139, 1);
+	font-family: $font-family_1;
+}
+.about {
+	font-weight: 500;
+	cursor: pointer;
+}
+.contact {
+	font-weight: 500;
+	cursor: pointer;
+}
