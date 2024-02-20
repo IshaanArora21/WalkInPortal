@@ -2,13 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
-import Listing from "./WalkinModule/Listing";
-import Job from "./WalkinModule/Job";
-import Review from "./WalkinModule/Review";
+import MainPage from "./Components/MainPage/MainPage"
 const App = () => (
   <div>
-<Listing/>
-  <Job/>
+<MainPage/>
   </div>
   
 );

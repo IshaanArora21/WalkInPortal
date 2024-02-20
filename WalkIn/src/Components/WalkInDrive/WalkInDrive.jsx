@@ -1,6 +1,6 @@
 import React,{useState} from "react"
-import "./Job.css"
-export default function Job(){
+import WalkInDriveStyles from "./WalkInDrive.module.scss"
+export default function WalkInDrive(){
 
     const [stylesPreReq,setStylesPreReq]=useState({})
     const [stylesJob,setStylesJob]=useState({})

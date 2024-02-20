@@ -36,7 +36,7 @@ body{
     margin-bottom: 8px;
   }
   
-  .step_inputs {
+  .stepInputs {
     background-color: rgb(255,255,255,1);
     padding: 24px;
     display: flex;
@@ -45,46 +45,46 @@ body{
     gap: 40px;
   }
   
-  .w_small {
+  .wSmall {
     width: 180px;
   }
   
-  .double_input_container {
+  .doubleInputContainer {
     display: flex;
     justify-content: normal;
     align-items: center;
     gap: 24px;
   }
   
-  .single_input_container {
+  .singleInputContainer {
     flex: 1;
   }
   
-  .specific_width {
+  .specificWidth {
     width: 452px;
   }
   
-  .flex_16 {
+  .flex16 {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 16px;
   }
   
-  .single_input_container {
+  .singleInputContainer {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 12px;
   }
   
-  .single_input_container label {
+  .singleInputContainer label {
     color: rgba(102, 102, 102, 1);
     font-size: 12px;
   }
   
-  .single_input_container input,
-  .single_input_container select {
+  .singleInputContainer input,
+  .singleInputContainer select {
     border: 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.38);
     padding-bottom: 4px;
@@ -93,7 +93,7 @@ body{
     font-weight: 600;
   }
   
-  .single_input_container input:focus {
+  .singleInputContainer input:focus {
     outline: none;
   }
   
@@ -105,18 +105,18 @@ body{
     margin: 0;
   }
   
-  .w_small {
+  .wSmall {
     width: 180px;
   }
   
-  .applicant_type_container {
+  .applicantTypeContainer {
     display: flex;
     justify-content: normal;
     align-items: center;
     gap: 24px;
   }
   
-  .applicant_type {
+  .applicantType {
     display: flex;
     justify-content: normal;
     align-items: center;
@@ -124,37 +124,37 @@ body{
     height: 24px;
   }
   
-  .applicant_type input[type="radio"] {
+  .applicantType input[type="radio"] {
     width: 20px;
     height: 24px;
     accent-color: rgba(31, 122, 84, 1);
   }
   
-  .applicant_type label {
+  .applicantType label {
     font-size: 16px;
     color: rgba(34, 34, 34, 1);
   }
   
-  .technologies_container {
+  .technologiesContainer {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 16px;
   }
   
-  .technologies_container_label {
+  .technologiesContainerLabel {
     font-size: 12px;
     color: rgba(102, 102, 102, 1);
   }
   
-  .single_checkbox_container {
+  .singleCheckboxContainer {
     display: flex;
     justify-content: normal;
     align-items: center;
     gap: 9px;
   }
   
-  .single_checkbox_container input[type="checkbox"] {
+  .singleCheckboxContainer input[type="checkbox"] {
     background-color: black;
     padding: 10px;
     width: 18px;
@@ -163,13 +163,13 @@ body{
     accent-color:  rgba(31, 122, 84, 1);
   }
   
-  .radio_container_label {
+  .radioContainerLabel {
     font-size: 12px;
     color: rgba(102, 102, 102, 1);
     padding-bottom: 12px;
   }
   
-  .radio_container_options {
+  .radioContainerOptions {
     margin-top: 13px;
     display: flex;
     justify-content: normal;
@@ -177,35 +177,16 @@ body{
     gap: 24px;
   }
   
-  .single_radio_container {
+  .singleRadioContainer {
     display: flex;
     justify-content: normal;
     align-items: center;
     gap: 8px;
   }
   
-  .single_radio_container input[type="radio"] {
+  .singleRadioContainer input[type="radio"] {
     width: 20px;
     height: 24px;
     accent-color: rgba(31, 122, 84, 1);
     margin: 0px;
   }
- .step_moving_btn {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 16px;
-     margin: 32px 0px 21px;
-   }
-   .next_previous_btn {
-     width: 90px;
-     height: 28px;
-     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
-     border-radius: 2px;
-     border: none;
-     background-color: rgba(63, 210, 139, 1);
-     color:rgba(31, 40, 52, 1);
-     font-weight: 600;
-     font-size: 14px;
-     font-family: 'Quicksand';
-   }

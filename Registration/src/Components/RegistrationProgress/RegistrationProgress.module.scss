@@ -2,74 +2,88 @@
   font-family: 'Quicksand';
   src: url('/public/assets/Quicksand\ font\ 1/Quicksand-VariableFont_wght.ttf') format('woff2');
 }
-body{
+
+body {
   font-family: 'Quicksand';
 }
-.reg-progress-bar {
-    margin: 2.4rem;
-    padding: 1.2rem 1.6rem;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 0.2rem;
+
+.registrationProgressBar {
+  margin: 2.4rem;
+  padding: 1.2rem 1.6rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.2rem;
+}
+
+.registrationProgressDiv {
+  display: flex;
+  align-items: center;
+}
+.complete {
+  background-color: #3fd28b;
+.registrationProgressNumbers {
+  color: #333333;
+}
+}
+
+.incomplete {
+  background-color: #757575;
+
+
+.registrationProgressNumbers {
+  color: white;
+}
+}
+.registrationProgressNumbersCircle {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.registrationProgressNumbers {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.registrationProgressLabels {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #222222;
+  margin-left: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .registrationProgressBar .registrationProgressDiv .registrationProgressLabels {
+    font-size: 1.3rem;
   }
-  .progress-div {
-    display: flex;
-    align-items: center;
+}
+
+@media only screen and (max-width: 470px) {
+  .registrationProgressBar .registrationProgressDiv .registrationProgressLabels {
+    font-size: 1.2rem;
   }
-  .complete {
-    background-color: #3fd28b;
+}
+
+@media only screen and (max-width: 444px) {
+  .registrationProgressBar .registrationProgressDiv .registrationProgressLabels {
+    font-size: 1rem;
   }
-  .complete .progress-numbers {
-    color: #333333;
+}
+
+@media only screen and (max-width: 380px) {
+  .registrationProgressBar .registrationProgressDiv .registrationProgressLabels {
+    font-size: 0.8rem;
   }
-  .incomplete {
-    background-color: #757575;
-  }
-  .incomplete .progress-numbers {
-    color: white;
-  }
-  .progress-numbers-circle {
-    height: 3.2rem;
-    width: 3.2rem;
-    border-radius: 50%;
-    display: flex;
-  }
-  .progress-numbers {
-    font-size: 1.6rem;
-    font-weight: 100;
-    margin: auto auto;
-  }
-  .progress-labels {
-    font-size: 1.6rem;
-    font-weight: normal;
-    color: #222222;
-    margin-left: 0.8rem;
-  }
-  @media only screen and (max-width: 600px) {
-    .reg-progress-bar .progress-div .progress-labels {
-      font-size: 1.3rem;
-    }
-  }
-  @media only screen and (max-width: 470px) {
-    .reg-progress-bar .progress-div .progress-labels {
-      font-size: 1.2rem;
-    }
-  }
-  @media only screen and (max-width: 444px) {
-    .reg-progress-bar .progress-div .progress-labels {
-      font-size: 1rem;
-    }
-  }
-  @media only screen and (max-width: 380px) {
-    .reg-progress-bar .progress-div .progress-labels {
-      font-size: 0.8rem;
-    }
-  }
-  .reg-progress-bar .progress-line {
-    height: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.2);
-    flex: 1;
-    margin: 0.8rem;
-  }
+}
+
+.registrationProgressLine {
+  height: 0.1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  flex: 1;
+  margin: 0 0.8rem; /* Add margin on both sides */
+}

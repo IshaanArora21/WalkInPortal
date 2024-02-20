@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
-import PersonalInformation from "./Components/PersonalInformation/PersonalInformation";
-import EducationalQualifications from "./Components/Qualifications/EducationalQualifications";
-
+import Review from "./Components/Review/Review"
 const App = () => (
   <div>
-<EducationalQualifications/>
+<Review/>
   </div>
   
 );

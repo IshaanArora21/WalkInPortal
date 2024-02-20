@@ -1,10 +1,10 @@
 import React from "react"
-import ProfessionalInformation from "./ProfessionalInformation.scss"
-export default function ProfessionalInformation() {
+import ProfessionalQualificationsStyles from "./ProfessionalQualifications.module.scss"
+export default function ProfessionalQualifications() {
     const isExperienced=false;
     return(
     <div>
-    <div className="dropDown">
+    <div className={ProfessionalQualificationsStyles.dropDown}>
       <span>Professional Qualifications</span>
       <div>
         <img
@@ -14,12 +14,12 @@ export default function ProfessionalInformation() {
       </div>
     </div>
 
-    <div className="step_input_container">
-      <div className="step_inputs mb-8">
-        <div className="single_input_container">
+    <div className={ProfessionalQualificationsStyles.stepInputContainer}>
+      <div className={`${ProfessionalQualificationsStyles.stepInputs}`}>
+        <div className={ProfessionalQualificationsStyles.singleInputContainer}>
           <label htmlFor="applicantType">Applicant Type*</label>
-          <div className="applicant_type_container">
-            <div className="applicant_type">
+          <div className={ProfessionalQualificationsStyles.applicantTypeContainer}>
+            <div className={ProfessionalQualificationsStyles.applicantType}>
               <input
                 type="radio"
                 name="applicantType"
@@ -28,7 +28,7 @@ export default function ProfessionalInformation() {
               <label htmlFor="applicantType1">Fresher</label>
             </div>
 
-            <div className="applicant_type">
+            <div className={ProfessionalQualificationsStyles.applicantType}>
               <input
                 type="radio"
                 name="applicantType"
@@ -40,39 +40,42 @@ export default function ProfessionalInformation() {
         </div>
       </div>
 {isExperienced ? 
-          <div className="step_inputs">
-          <div className="single_input_container w_small">
+          <div className={ProfessionalQualificationsStyles.stepInputs}>
+          <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
             <label for="yearsOfExperience">Years of Experience*</label>
             <input
+            className={ProfessionalQualificationsStyles.wSmall}
               type="number"
               name="yearsOfExperience"
               id="yearsOfExperience"
             />
           </div>
       
-          <div className="single_input_container w_small">
+          <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
             <label for="currentCTC">Current CTC* (In Rupees)</label>
             <input
+              className={ProfessionalQualificationsStyles.wSmall}
               type="text"
               name="currentCTC"
               id="currentCTC"
             />
           </div>
       
-          <div className="single_input_container w_small">
+          <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
             <label for="expectedCTC">Expected CTC* (In Rupees)</label>
             <input
+            className={ProfessionalQualificationsStyles.wSmall}
               type="text"
               name="expectedCTC"
               id="expectedCTC"
             />
           </div>
       
-          <div className="technologies_container">
-            <span className="technologies_container_label"
+          <div className={ProfessionalQualificationsStyles.technologiesContainer}>
+            <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
               >Select All The Technologies You Expertise In*</span>
       
-            <div className="single_checkbox_container">
+            <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
               <input
                 type="checkbox"
                 id="e_technology"
@@ -81,9 +84,10 @@ export default function ProfessionalInformation() {
             </div>
             
       
-            <div className="single_input_container specific_width">
+            <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
               <label for="e_otherTechnologies">If others, please mention</label>
               <input
+              className={ProfessionalQualificationsStyles.specificWidth}
                 type="text"
                 name="e_otherTechnologies"
                 id="e_otherTechnologies"
@@ -91,14 +95,14 @@ export default function ProfessionalInformation() {
             </div>
           </div>
       
-          <div className="technologies_container">
-            <span className="technologies_container_label"
+          <div className={ProfessionalQualificationsStyles.technologiesContainer}>
+            <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
               >Select All The Technologies You Are Familiar In</span>
       
       
       
             
-            <div className="single_checkbox_container">
+            <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
               <input
                 type="checkbox"
                 id="f_ + technology"
@@ -107,9 +111,10 @@ export default function ProfessionalInformation() {
             </div>
             
       
-            <div className="single_input_container specific_width">
+            <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
               <label for="f_otherTechnologies">If others, please mention</label>
               <input
+              className={ProfessionalQualificationsStyles.specificWidth}
                 type="text"
                 name="f_otherTechnologies"
                 id="f_otherTechnologies"
@@ -117,12 +122,12 @@ export default function ProfessionalInformation() {
             </div>
           </div>
       
-          <div className="flex_16">
-            <div className="radio_container">
-              <span className="radio_container_label"
+          <div className={ProfessionalQualificationsStyles.flex16}>
+            <div className={ProfessionalQualificationsStyles.radioConatiner}>
+              <span className={ProfessionalQualificationsStyles.radioContainerLabel}
                 >Are you currently on notice period?*</span>
-              <div className="radio_container_options">
-                <div className="single_radio_container">
+              <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
                   <input
                     type="radio"
                     name="isInNoticePeriod"
@@ -130,7 +135,7 @@ export default function ProfessionalInformation() {
                   <label htmlFor="isInNoticePeriod">Yes</label>
                 </div>
       
-                <div className="single_radio_container">
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
                   <input
                     type="radio"
                     name="isInNoticePeriod"
@@ -140,8 +145,8 @@ export default function ProfessionalInformation() {
               </div>
             </div>
       
-            <div className="double_input_container">
-              <div className="single_input_container">
+            <div className={ProfessionalQualificationsStyles.doubleInputContainer}>
+              <div className={ProfessionalQualificationsStyles.singleInputContainer}>
                 <label htmlFor="noticePeriodEnd"
                   >If Yes, when will your notice period end?*</label>
                 <input
@@ -151,7 +156,7 @@ export default function ProfessionalInformation() {
                 />
               </div>
       
-              <div className="single_input_container">
+              <div className={ProfessionalQualificationsStyles.singleInputContainer}>
                 <label htmlFor="noticePeriodLength"
                   >How long is your notice period?* (Mention in months)</label>
                 <select
@@ -167,12 +172,12 @@ export default function ProfessionalInformation() {
             </div>
           </div>
       
-          <div className="flex_16">
-            <div className="radio_container">
-              <span className="radio_container_label"
+          <div className={ProfessionalQualificationsStyles.flex16}>
+            <div className={ProfessionalQualificationsStyles.radioConatiner}>
+              <span className={ProfessionalQualificationsStyles.radioContainerLabel}
                 >Have You Appeared For Any Test By Zeus in the past 12 months?*</span>
-              <div className="radio_container_options">
-                <div className="single_radio_container">
+              <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
                   <input
                     type="radio"
                     name="isAppearedInTestByZeus"
@@ -181,7 +186,7 @@ export default function ProfessionalInformation() {
                   <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
                 </div>
       
-                <div className="single_radio_container">
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
                   <input
                     type="radio"
                     name="isAppearedInTestByZeus"
@@ -192,10 +197,11 @@ export default function ProfessionalInformation() {
               </div>
             </div>
       
-            <div className="single_input_container specific_width">
+            <div className={ProfessionalQualificationsStyles.singleInputContainer}>
               <label for="appearedRoleName"
                 >If Yes, which role did you apply for?</label>
               <input
+                className={ProfessionalQualificationsStyles.specificWidth}
                 type="text"
                 name="appearedRoleName"
                 id="appearedRoleName"
@@ -205,9 +211,9 @@ export default function ProfessionalInformation() {
         </div>
       
   : 
-            <div className="step_inputs">
-    <div className="technologies_container">
-      <span className="technologies_container_label"
+            <div className={ProfessionalQualificationsStyles.stepInputs}>
+    <div className={ProfessionalQualificationsStyles.technologiesContainer}>
+      <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
         >Select All The Technologies You Are Familiar In</span>
 
       <div className="single_checkbox_container">
@@ -218,9 +224,10 @@ export default function ProfessionalInformation() {
         <label htmlFor="f_technology">{}</label>
       </div>
 
-      <div className="single_input_container specific_width">
+      <div className={ProfessionalQualificationsStyles.singleInputContainer}>
         <label for="otherTechnologies">If others, please mention</label>
         <input
+        className={ProfessionalQualificationsStyles.specificWidth}
           type="text"
           name="otherTechnologies"
           id="otherTechnologies"
@@ -228,12 +235,12 @@ export default function ProfessionalInformation() {
       </div>
     </div>
 
-    <div className="flex_16">
-      <div className="radio_container">
-        <span className="radio_container_label"
+    <div className={ProfessionalQualificationsStyles.flex16}>
+      <div className={ProfessionalQualificationsStyles.radioConatiner}>
+        <span className={ProfessionalQualificationsStyles.radioContainerLabel}
           >Have You Appeared For Any Test By Zeus in the past 12 months?*</span>
-        <div className="radio_container_options">
-          <div className="single_radio_container">
+        <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
+          <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
             <input
               type="radio"
               name="isAppearedInTestByZeus"
@@ -242,7 +249,7 @@ export default function ProfessionalInformation() {
             <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
           </div>
 
-          <div className="single_radio_container">
+          <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
             <input
               type="radio"
               name="isAppearedInTestByZeus"
@@ -253,10 +260,11 @@ export default function ProfessionalInformation() {
         </div>
       </div>
 
-      <div className="single_input_container specific_width">
+      <div className={ProfessionalQualificationsStyles.singleInputContainer}>
         <label htmlFor="appearedRoleName"
           >If Yes, which role did you apply for?</label>
         <input
+          className={ProfessionalQualificationsStyles.specificWidth}
           type="text"
           name="appearedRoleName"
           id="appearedRoleName"
@@ -268,17 +276,7 @@ export default function ProfessionalInformation() {
         }
  
 </div>
-<div class="step_moving_btn">
-  <button
-    class="next_previous_btn"
-    type="submit"
-  >
-    PREVIOUS
-  </button>
-  <button class="next_previous_btn" type="submit">
-    NEXT
-  </button>
-</div>
+
 </div>
     )
 }
