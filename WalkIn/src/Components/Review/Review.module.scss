@@ -6,79 +6,79 @@
 body{
     font-family: 'Quicksand';
 }
-.main_component {
+.mainComponent {
     padding: 76px 24px 40px;
     background-color: rgba(238, 238, 238, 1);
     min-height: 81vh;
+    .hallTicketComponent {
+        background-color: rgba(255, 255, 255, 1);
+        padding: 74px 16px 24px;
+        position: relative;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24);
+        > img {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            top: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29);
+            background-clip: padding-box;
+            border-radius: 50%;
+        }
+        hr {
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            margin: 16px 0px;
+        }
+        > h1 {
+            margin: 0px;
+            font-size: 18px;
+            padding-bottom: 8px;
+        }
+        .subComponent {
+            display: flex;
+            justify-content: normal;
+            align-items: normal;
+            flex-direction: column;
+            gap: 8px;
+            .component_title {
+                color: rgba(102, 102, 102, 1);
+                font-size: 12px;
+            }
+            .component_value {
+                display: flex;
+                justify-content: normal;
+                align-items: normal;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+            }
+            .address_value {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(63, 210, 139, 1);
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12);
+            width: 202px;
+            height: 28px;
+            border: none;
+            margin: 0px auto;
+        }
+    }
 }
-.main_component .hallTicket_component {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 74px 16px 24px;
-    position: relative;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24);
-}
-.main_component .hallTicket_component > img {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    top: -50px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29);
-    background-clip: padding-box;
-    border-radius: 50%;
-}
-.main_component .hallTicket_component > h1 {
-    margin: 0px;
-    font-size: 18px;
-    padding-bottom: 8px;
-}
-.main_component .hallTicket_component hr {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    margin: 16px 0px;
-}
-.main_component .hallTicket_component .sub_component {
-    display: flex;
-    justify-content: normal;
-    align-items: normal;
-    flex-direction: column;
-    gap: 8px;
-}
-.main_component .hallTicket_component .sub_component .component_title {
-    color: rgba(102, 102, 102, 1);
-    font-size: 12px;
-}
-.main_component .hallTicket_component .sub_component .component_value {
-    display: flex;
-    justify-content: normal;
-    align-items: normal;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-}
-.main_component .hallTicket_component .sub_component .address_value {
-    font-size: 14px;
-    line-height: 20px;
-}
-.main_component .hallTicket_component button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(63, 210, 139, 1);
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12);
-    width: 202px;
-    height: 28px;
-    border: none;
-    margin: 0px auto;
-}
-.download-hall-ticket{
+.downloadHallTicket{
     font-family: 'Quicksand';
 }
 @media screen and (max-width: 376px) {
-    .main_component .hallTicket_component > h1 {
+    .mainComponent .hallTicketComponent > h1 {
         text-align: center;
    }
 }

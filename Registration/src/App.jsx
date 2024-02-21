@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import Review from "./Components/Review/Review"
+import MainPage from "./Components/MainPage/MainPage";
+import { RouterProvider } from "react-router-dom";
 const App = () => (
   <div>
-<Review/>
+   <RouterProvider router={MainPage}/>
   </div>
   
 );

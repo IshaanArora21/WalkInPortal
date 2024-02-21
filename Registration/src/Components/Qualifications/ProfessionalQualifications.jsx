@@ -1,6 +1,6 @@
 import React from "react"
 import ProfessionalQualificationsStyles from "./ProfessionalQualifications.module.scss"
-export default function ProfessionalQualifications() {
+export default function ProfessionalQualifications(props) {
     const isExperienced=false;
     return(
     <div>
@@ -24,6 +24,7 @@ export default function ProfessionalQualifications() {
                 type="radio"
                 name="applicantType"
                 id="applicantType1"
+                disabled={props.review}
               />
               <label htmlFor="applicantType1">Fresher</label>
             </div>
@@ -33,6 +34,7 @@ export default function ProfessionalQualifications() {
                 type="radio"
                 name="applicantType"
                 id="applicantType2"
+                disabled={props.review}
               />
               <label htmlFor="applicantType2">Experienced</label>
             </div>
@@ -48,6 +50,7 @@ export default function ProfessionalQualifications() {
               type="number"
               name="yearsOfExperience"
               id="yearsOfExperience"
+              disabled={props.review}
             />
           </div>
       
@@ -58,6 +61,7 @@ export default function ProfessionalQualifications() {
               type="text"
               name="currentCTC"
               id="currentCTC"
+              disabled={props.review}
             />
           </div>
       
@@ -68,6 +72,7 @@ export default function ProfessionalQualifications() {
               type="text"
               name="expectedCTC"
               id="expectedCTC"
+              disabled={props.review}
             />
           </div>
       
@@ -79,6 +84,7 @@ export default function ProfessionalQualifications() {
               <input
                 type="checkbox"
                 id="e_technology"
+                disabled={props.review}
               />
               <label htmlFor="e_technology">{}</label>
             </div>
@@ -91,6 +97,7 @@ export default function ProfessionalQualifications() {
                 type="text"
                 name="e_otherTechnologies"
                 id="e_otherTechnologies"
+                disabled={props.review}
               />
             </div>
           </div>
@@ -106,6 +113,7 @@ export default function ProfessionalQualifications() {
               <input
                 type="checkbox"
                 id="f_ + technology"
+                disabled={props.review}
               />
               <label htmlFor="f_technology">{}</label>
             </div>
@@ -118,6 +126,7 @@ export default function ProfessionalQualifications() {
                 type="text"
                 name="f_otherTechnologies"
                 id="f_otherTechnologies"
+                disabled={props.review}
               />
             </div>
           </div>
@@ -131,6 +140,7 @@ export default function ProfessionalQualifications() {
                   <input
                     type="radio"
                     name="isInNoticePeriod"
+                    disabled={props.review}
                   />
                   <label htmlFor="isInNoticePeriod">Yes</label>
                 </div>
@@ -139,6 +149,7 @@ export default function ProfessionalQualifications() {
                   <input
                     type="radio"
                     name="isInNoticePeriod"
+                    disabled={props.review}
                   />
                   <label htmlFor="isInNoticePeriod">No</label>
                 </div>
@@ -153,6 +164,7 @@ export default function ProfessionalQualifications() {
                   type="date"
                   name="noticePeriodEnd"
                   id="noticePeriodEnd"
+                  disabled={props.review}
                 />
               </div>
       
@@ -162,6 +174,7 @@ export default function ProfessionalQualifications() {
                 <select
                   name="noticePeriodLength"
                   id="noticePeriodLength"
+                  disabled={props.review}
                 >
                   <option value="0">0 months</option>
                   <option value="1">1 months</option>
@@ -182,6 +195,7 @@ export default function ProfessionalQualifications() {
                     type="radio"
                     name="isAppearedInTestByZeus"
                     id="isAppearedInTestByZeus_yes"
+                    disabled={props.review}
                   />
                   <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
                 </div>
@@ -191,6 +205,7 @@ export default function ProfessionalQualifications() {
                     type="radio"
                     name="isAppearedInTestByZeus"
                     id="isAppearedInTestByZeus_no"
+                    disabled={props.review}
                   />
                   <label htmlFor="isAppearedInTestByZeus_no">No</label>
                 </div>
@@ -205,6 +220,7 @@ export default function ProfessionalQualifications() {
                 type="text"
                 name="appearedRoleName"
                 id="appearedRoleName"
+                disabled={props.review}
               />
             </div>
           </div>
@@ -220,6 +236,7 @@ export default function ProfessionalQualifications() {
         <input
           type="checkbox"
           id="f_technology"
+          disabled={props.review}
         />
         <label htmlFor="f_technology">{}</label>
       </div>
@@ -231,6 +248,7 @@ export default function ProfessionalQualifications() {
           type="text"
           name="otherTechnologies"
           id="otherTechnologies"
+          disabled={props.review}
         />
       </div>
     </div>
@@ -245,6 +263,7 @@ export default function ProfessionalQualifications() {
               type="radio"
               name="isAppearedInTestByZeus"
               id="isAppearedInTestByZeus_yes"
+              disabled={props.review}
             />
             <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
           </div>
@@ -254,6 +273,7 @@ export default function ProfessionalQualifications() {
               type="radio"
               name="isAppearedInTestByZeus"
               id="isAppearedInTestByZeus_no"
+              disabled={props.review}
             />
             <label htmlFor="isAppearedInTestByZeus_no">No</label>
           </div>
@@ -268,6 +288,7 @@ export default function ProfessionalQualifications() {
           type="text"
           name="appearedRoleName"
           id="appearedRoleName"
+          disabled={props.review}
         />
       </div>
     </div>

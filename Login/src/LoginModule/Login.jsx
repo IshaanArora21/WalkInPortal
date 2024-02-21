@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import LoginStyles from "./Login.module.scss"
-
+import useLoginStore from '../ReactStore/Store'
 export default function Login() {
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  const [rememberMe,setRememberMe]=useState(true);
   return (
     <div className={LoginStyles.loginMainContainer}>
     <div className={LoginStyles.loginContainer}>
@@ -16,6 +19,7 @@ export default function Login() {
               name="email"
               id="email"
               placeholder="Email ID*"
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
           <a href="#" className={LoginStyles.inputForget}>FORGOT EMAIL ID?</a>
@@ -29,6 +33,7 @@ export default function Login() {
               name="password"
               id="password"
               placeholder="Password*"
+              onChange={(e)=>setPassword(e.target.value)}
             />
             <img
               src="/assets/icons/preview.svg"
@@ -40,7 +45,7 @@ export default function Login() {
         </div>
       </div>
       <div className={LoginStyles.rememberMe}>
-        <input type="checkbox" name="rememberMe" id="rememberMe" />Remember Me
+        <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e)=>setRememberMe(e.target.value)}/>Remember Me
       </div>
   
       <div className={LoginStyles.loginButtonContainer}>

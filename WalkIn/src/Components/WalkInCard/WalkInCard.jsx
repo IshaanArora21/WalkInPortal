@@ -1,6 +1,11 @@
 import React from "react"
 import WalkInCardStyles from "./WalkInCard.module.scss"
-export default function WalkInCard(){
+import {useNavigate} from "react-router-dom"
+export default function WalkInCard(props){
+  const navigate=useNavigate();
+  function handleClick(){
+      navigate("/WalkInDrive");
+  }
     return <div className={WalkInCardStyles.listContainer}>
   <div className={WalkInCardStyles.jobContainer}>
     <h1>{`Walkin for 1`}</h1>
@@ -42,9 +47,9 @@ export default function WalkInCard(){
       <span className={WalkInCardStyles.extraRoles}>{`Extra role`}</span>
     </div>
 
-    <button className={WalkInCardStyles.moreDetailsButton}>
+    {!props.exploreMore && <button className={WalkInCardStyles.moreDetailsButton} onClick={handleClick}>
       VIEW MORE DETAILS
-    </button>
+    </button>}
   </div>
   
 

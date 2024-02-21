@@ -1,7 +1,7 @@
 import React from "react";
 import EducationalQualificationsStyles from "./EducationalQualifications.module.scss"
 
-export default function EducationalQualifications() {
+export default function EducationalQualifications(props) {
     return (
         <div className={EducationalQualificationsStyles.educationalQualifications}>
             <div className={EducationalQualificationsStyles.dropDown}>
@@ -25,6 +25,7 @@ export default function EducationalQualifications() {
                             className={EducationalQualificationsStyles.wSmall}
                             type="number"
                             id="aggregatePercentage"
+                            disabled={props.review}
                         />
                     </div>
 
@@ -34,6 +35,7 @@ export default function EducationalQualifications() {
                             className={EducationalQualificationsStyles.wSmall}
                             name="passingYear"
                             id="passingYear"
+                            disabled={props.review}
                         >
                             <option value="2020">2020</option>
                             <option value="2021">2021</option>
@@ -48,6 +50,7 @@ export default function EducationalQualifications() {
                             <select
                                 name="qualification"
                                 id="qualification"
+                                disabled={props.review}
                             >
                                 <option value="Bachelor in Technology (B.Tech)">
                                     Bachelor in Technology (B.Tech)
@@ -60,6 +63,7 @@ export default function EducationalQualifications() {
                             <select
                                 name="stream"
                                 id="stream"
+                                disabled={props.review}
                             >
                                 <option value="Information Technology">
                                     Information Technology
@@ -74,6 +78,7 @@ export default function EducationalQualifications() {
                             <select
                                 name="collegeName"
                                 id="collegeName"
+                                disabled={props.review}
                             >
                                 <option value="Pune Institute of Technology (PIT)">
                                     Pune Institute of Technology (PIT)
@@ -88,6 +93,7 @@ export default function EducationalQualifications() {
                                 type="text"
                                 name="otherCollageName"
                                 id="otherCollageName"
+                                disabled={props.review}
                             />
                         </div>
                     </div >
@@ -98,6 +104,7 @@ export default function EducationalQualifications() {
                             className={EducationalQualificationsStyles.wSmall}
                             type="text"
                             id="collegeLocation"
+                            disabled={props.review}
                         />
                     </div>
                 </div >
