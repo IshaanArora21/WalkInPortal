@@ -41,10 +41,14 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "WalkIn",
+      name: "WalkInMFE",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./WalkInReview":"./src/Components/Review/WalkInReview.jsx",
+        "./DriveDetails":"./src/Components/WalkInDrive/DriveDetails.jsx",
+        "./Drives":"./src/Components/WalkInDrive/Drives.jsx"
+      },
       shared: {
         ...deps,
         react: {

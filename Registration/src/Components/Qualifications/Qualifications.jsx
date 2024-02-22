@@ -2,7 +2,9 @@ import React from "react"
 import QualificationsStyles from "./Qualifications.module.scss"
 import EducationalQualifications from "./EducationalQualifications"
 import ProfessionalQualifications from "./ProfessionalQualifications"
+import RegistrationProgress from "../RegistrationProgress/RegistrationProgress"
 import { useNavigate } from "react-router-dom";
+import CreateAccount from "../CreateAccount/CreateAccount"
 export default function Qualifications(props){
     const navigate=useNavigate();
     function handleNext(){
@@ -13,6 +15,8 @@ export default function Qualifications(props){
     }
     return (
         <div>
+            <CreateAccount/>
+            <RegistrationProgress/>
             <EducationalQualifications review={props.review}/>
             
             <ProfessionalQualifications review={props.review}/>

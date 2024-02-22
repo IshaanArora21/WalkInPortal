@@ -27,15 +27,17 @@ Login
 -webpack.config.json
 -gitignore
 
-localize-field
+Navigation
 -public
 --images/icons
 -src
 --ReactStore
 ---Store.js
 --Components
----Header.jsx(expose)
----Footer.jsx(expose)
+---Header
+----Header.jsx(expose)
+---Footer
+----Footer.jsx(expose)
 --App.jsx
 --entry.js
 --index.js
@@ -51,10 +53,21 @@ Registration
 -src
 --ReactStore
 ---Store.js
---RegistrationModule
----PersonalInfo.jsx(expose)
----Qualificaions.jsx(expose)
----Review.jsx(expose)
+--Components
+---PersonalInformation
+----PersonalInformation.jsx(expose)
+---Qualificaions
+----Qualificaions.jsx(expose)
+----EducationalQualifications.jsx(expose)
+----ProfessionalQualifications.jsx(expose)
+---Review
+----Review.jsx(expose)
+---MainPage
+----MainPage.jsx(for routing)
+---CreateAccount
+----CreateAccount.jsx(for the account header)
+---RegistrationProgress
+----RegistrationProgress.jsx
 --App.jsx
 --entry.js
 --index.js
@@ -69,13 +82,19 @@ WalkIn
 -src
 --ReactStore
 ---Store.js
---WalkinModule
----DriveListingPage.jsx(expose)
----DriveCard.jsx(expose)
----DriveTimeslot.jsx(expose)
----DriveJobDescription.jsx(expose)
----DrivePrerequistes.jsx(expose)
----Review.jsx(expose)
+--Components
+---MainPage
+----MainPage.jsx(for routing)
+---Review
+----Review.jsx
+---WalkInCard
+----JobDetails.jsx
+----Timeslot.jsx
+----Prerequisites.jsx
+----WalkInCard.jsx
+---WalkInDrive
+----DriveDetails.jsx
+----Drives.jsx
 --App.jsx
 --entry.js
 --index.js

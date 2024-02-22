@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import WalkInCard from "../WalkInCard/WalkInCard"
 import Drives from "../WalkInDrive/Drives";
-import Review from "../Review/Review";
+import WalkInReview from "../Review/WalkInReview";
 import DriveDetails from "../WalkInDrive/DriveDetails";
 const MainPage=createBrowserRouter(
 
@@ -22,7 +22,7 @@ const MainPage=createBrowserRouter(
         },
         {
             path:'/Review',
-            element:<Review/>
+            element:<WalkInReview/>
         }
     ]
 )

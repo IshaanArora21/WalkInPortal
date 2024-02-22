@@ -4,10 +4,11 @@ import { createBrowserRouter } from "react-router-dom";
 import PersonalInformation from "../PersonalInformation/PersonalInformation"
 import Qualifications from "../Qualifications/Qualifications"
 import Review from "../Review/Review"
+import PersonalInformationCard from "../PersonalInformation/PersonalInformationCard";
 const MainPage = createBrowserRouter([
   {
     path: "/",
-    element: <PersonalInformation />,
+    element: <PersonalInformationCard />,
   },
   {
     path: "/Qualifications",

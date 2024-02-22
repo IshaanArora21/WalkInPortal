@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import EducationalQualificationsStyles from "./EducationalQualifications.module.scss"
 
 export default function EducationalQualifications(props) {
+    const [showEducationDetails,setShowEducationDetails]=useState(true)
+    const [percentage, setPercentage] = useState('');
+    const [year, setYear] = useState('');
+    const [qualification, setQualification] = useState('');
+    const [stream, setStream] = useState("");
+    const [college, setCollege] = useState('');
+    const [otherCollege, setOtherCollege] = useState("");
+    const [location, setLocation] = useState('');
+    const notVisible={
+        display:"none"
+    }
+    const educationDetails={
+        percentage: percentage,
+        year: year,
+        qualification: qualification,
+        stream: stream,
+        college: college === "Others" ? otherCollege : college,
+        location: location,
+    }
     return (
-        <div className={EducationalQualificationsStyles.educationalQualifications}>
-            <div className={EducationalQualificationsStyles.dropDown}>
+        <div className={EducationalQualificationsStyles.educationalQualifications} >
+            <div className={EducationalQualificationsStyles.dropDown} onClick={()=>setShowEducationDetails(!showEducationDetails)}>
                 <span>Educational Qualifications</span>
                 <div
                 >
                     <img
-                        src="/assets/icons/expand_less_black_24dp.svg"
+                        src={showEducationDetails?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
                         alt="expand less/more icon"
                     />
                 </div>
             </div>
 
             <div
-                className={EducationalQualificationsStyles.stepInputContainer}
+                className={EducationalQualificationsStyles.stepInputContainer} style={showEducationDetails?{}:notVisible}
             >
                 <div className={EducationalQualificationsStyles.stepInputs}>
                     <div className={EducationalQualificationsStyles.singleInputContainer}>
@@ -26,6 +45,9 @@ export default function EducationalQualifications(props) {
                             type="number"
                             id="aggregatePercentage"
                             disabled={props.review}
+                            onChange={(e) => {
+                                setPercentage(e.target.value);
+                              }}
                         />
                     </div>
 
@@ -36,6 +58,9 @@ export default function EducationalQualifications(props) {
                             name="passingYear"
                             id="passingYear"
                             disabled={props.review}
+                            onChange={(e) => {
+                                setYear(e.target.value);
+                              }}
                         >
                             <option value="2020">2020</option>
                             <option value="2021">2021</option>
@@ -51,6 +76,10 @@ export default function EducationalQualifications(props) {
                                 name="qualification"
                                 id="qualification"
                                 disabled={props.review}
+                                onChange={(e) => {
+                                    setQualification(e.target.value);
+                                    
+                                  }}
                             >
                                 <option value="Bachelor in Technology (B.Tech)">
                                     Bachelor in Technology (B.Tech)
@@ -64,6 +93,9 @@ export default function EducationalQualifications(props) {
                                 name="stream"
                                 id="stream"
                                 disabled={props.review}
+                                onChange={(e) => {
+                                    setStream(e.target.value);
+                                  }}
                             >
                                 <option value="Information Technology">
                                     Information Technology
@@ -79,6 +111,9 @@ export default function EducationalQualifications(props) {
                                 name="collegeName"
                                 id="collegeName"
                                 disabled={props.review}
+                                onChange={(e) => {
+                                    setCollege(e.target.value);
+                                  }}
                             >
                                 <option value="Pune Institute of Technology (PIT)">
                                     Pune Institute of Technology (PIT)
@@ -94,6 +129,9 @@ export default function EducationalQualifications(props) {
                                 name="otherCollageName"
                                 id="otherCollageName"
                                 disabled={props.review}
+                                onChange={(e) => {
+                                    setOtherCollege(e.target.value);
+                                  }}
                             />
                         </div>
                     </div >
@@ -105,6 +143,9 @@ export default function EducationalQualifications(props) {
                             type="text"
                             id="collegeLocation"
                             disabled={props.review}
+                            onChange={(e) => {
+                                setLocation(e.target.value);
+                              }}
                         />
                     </div>
                 </div >

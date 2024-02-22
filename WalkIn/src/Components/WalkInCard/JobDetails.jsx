@@ -1,36 +1,26 @@
 import React,{useState} from "react"
 import JobDetailsStyles from "./JobDetails.module.scss"
 export default function JobDetails() {
-    const [openContainer,setOpenContainer]=useState(true);
-    const [containerStyles,setContainerStyles]=useState({});
+    const [showDetails,setShowDetails]=useState(true);
     const notVisible={
        display:'none'
-    }
-    function handleView(){
-        if(openContainer){
-            setContainerStyles(notVisible)
-        }
-        else{
-            setContainerStyles({})
-        }
-        setOpenContainer(!openContainer)
     }
     return (
         <div className={JobDetailsStyles.mainComponent}>
         <div className={JobDetailsStyles.singleJobContainer}>
-            <div className={JobDetailsStyles.dropDown} onClick={handleView}>
+            <div className={JobDetailsStyles.dropDown} onClick={()=>setShowDetails(!showDetails)}>
                 <span>{`Job Name`}</span>
 
                 <div>
 
                     <img
-                        src={openContainer?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
+                        src={showDetails?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
                         alt="expand less/more icon"
                     />
                 </div>
             </div>
 
-            <div className={JobDetailsStyles.jobContainerInfo} style={containerStyles}>
+            <div className={JobDetailsStyles.jobContainerInfo} style={showDetails?{}:notVisible}>
                 <div className={JobDetailsStyles.jobInfo}>
                     <div className={JobDetailsStyles.jobHeader}>gross compensation package :</div>
 

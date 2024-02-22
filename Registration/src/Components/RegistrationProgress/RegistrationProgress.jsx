@@ -4,7 +4,7 @@ export default function RegistrationProgress() {
     return (
     <div className={RegistrationProgressStyles.registrationProgressBar}>
         <div className={RegistrationProgressStyles.registrationProgressDiv}>
-            <div className="">
+            <div className={`${RegistrationProgressStyles.registrationProgressNumbersCircle} ${RegistrationProgressStyles.incomplete}`}>
                 <div className={RegistrationProgressStyles.registrationProgressNumbers}>1</div>
             </div>
             <div className={RegistrationProgressStyles.registrationProgressLabels}>Personal Information</div>
@@ -22,7 +22,7 @@ export default function RegistrationProgress() {
            
         </div>
         <div className={RegistrationProgressStyles.registrationProgressDiv}>
-                <div className="">
+                <div className={`${RegistrationProgressStyles.registrationProgressNumbersCircle} ${RegistrationProgressStyles.incomplete}`}>
                     <div className={RegistrationProgressStyles.registrationProgressNumbers}>3</div>
                 </div>
                 <div className={RegistrationProgressStyles.registrationProgressLabels}>Review and Proceed</div>

@@ -4,6 +4,8 @@ import PersonalInformation from "../PersonalInformation/PersonalInformation";
 import EducationalQualifications from "../Qualifications/EducationalQualifications";
 import ProfessionalQualifications from "../Qualifications/ProfessionalQualifications";
 import {useNavigate} from "react-router-dom"
+import RegistrationProgress from "../RegistrationProgress/RegistrationProgress";
+import CreateAccount from "../CreateAccount/CreateAccount";
 export default function Review() {
   const navigate=useNavigate();
   const [isReviewPersonalInformation,setIsReviewPersonalInformation]=useState(true)
@@ -23,7 +25,10 @@ export default function Review() {
 function handleSaveQualifications(){
     setIsReviewQualifications(true)
 }
-  return <div>
+  return <>
+  <CreateAccount/>
+  <RegistrationProgress/>
+  <div>
      <div className={ReviewStyles.singleMainHeaderComponent}>
       <div className={ReviewStyles.mainComponentTitle}>Personal Information</div>
       <button
@@ -61,4 +66,5 @@ function handleSaveQualifications(){
       </button>
     </div>
   </div>
+  </>
 }

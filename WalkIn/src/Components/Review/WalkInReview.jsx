@@ -1,6 +1,6 @@
 import React from "react"
-import ReviewStyles from "./Review.module.scss"
-export default function Review(){
+import ReviewStyles from "./WalkInReview.module.scss"
+export default function WalkInReview(){
     return(
         <div className={ReviewStyles.mainComponent}>
   <div className={ReviewStyles.hallTicketComponent}>

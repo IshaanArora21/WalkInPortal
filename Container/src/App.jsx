@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import Login from "LoginMFE/Login"
-import PersonalInfo from "RegistrationMFE/PersonalInfo"
+import { RouterProvider } from "react-router-dom";
+import Router from "./Router"
 import "./index.css";
 
 const App = () => (
-  <PersonalInfo/>
+  <RouterProvider router={Router}/>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

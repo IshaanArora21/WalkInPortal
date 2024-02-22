@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PersonalInformationStyles from "./PersonalInformation.module.scss"
 import { useNavigate } from "react-router-dom";
-
 export default function PersonalInformation(props) {
     const navigateTo = useNavigate();
 
@@ -45,6 +44,7 @@ export default function PersonalInformation(props) {
         }
     }
     return (
+        <>
         <div className={PersonalInformationStyles.personalInformationContainer}>
             <div className={PersonalInformationStyles.personalInformationForm}>
                 <div className={PersonalInformationStyles.userPicture}>
@@ -176,7 +176,7 @@ export default function PersonalInformation(props) {
                 <div className={PersonalInformationStyles.preferredJobRoles}>
                     <label>Preferred Job Roles*</label>
                     <div className={PersonalInformationStyles.checkboxSingleContainer}>
-                        <input type="checkbox" disabled={props.review} onChange={handleJobChange(`jobrole`)} />
+                        <input type="checkbox" disabled={props.review} onChange={()=>handleJobChange(`jobrole`)} />
                         <label className={PersonalInformationStyles.normalLabel}>jobrole</label>
                     </div>
                 </div>
@@ -208,10 +208,11 @@ export default function PersonalInformation(props) {
                 </div>
             </div>
             {!props.review && <div className={PersonalInformationStyles.stepMovingButton}>
-                <button className={`${PersonalInformationStyles.nextPreviousButton} `} onClick={handleNavigate} type="submit">
+                <button className={`${PersonalInformationStyles.nextPreviousButton} `} onClick={()=>handleNavigate()} type="submit">
                     NEXT
                 </button>
             </div>}
         </div>
+        </>
     );
 }
