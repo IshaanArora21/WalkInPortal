@@ -4,14 +4,13 @@ import PersonalInformation from "../PersonalInformation/PersonalInformation";
 import EducationalQualifications from "../Qualifications/EducationalQualifications";
 import ProfessionalQualifications from "../Qualifications/ProfessionalQualifications";
 import {useNavigate} from "react-router-dom"
-import RegistrationProgress from "../RegistrationProgress/RegistrationProgress";
-import CreateAccount from "../CreateAccount/CreateAccount";
+
 export default function Review() {
   const navigate=useNavigate();
   const [isReviewPersonalInformation,setIsReviewPersonalInformation]=useState(true)
   const [isReviewQualifications,setIsReviewQualifications]=useState(true)
   function handlePrevious(){
-    navigate("/Qualifications");
+    navigate("/register/qualification");
   }
   function handleEditPersonalInformation(){
        setIsReviewPersonalInformation(false)
@@ -26,8 +25,7 @@ function handleSaveQualifications(){
     setIsReviewQualifications(true)
 }
   return <>
-  <CreateAccount/>
-  <RegistrationProgress/>
+
   <div>
      <div className={ReviewStyles.singleMainHeaderComponent}>
       <div className={ReviewStyles.mainComponentTitle}>Personal Information</div>

@@ -1,14 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Registration from "./Components/Registration";
+import { createRoot } from "react-dom/client";
 import "./index.css";
-import Review from "./Components/Review/Review"
-import MainPage from "./Components/MainPage/MainPage";
-import { RouterProvider } from "react-router-dom";
-const App = () => (
-  <div>
-   <RouterProvider router={MainPage}/>
-  </div>
-  
-);
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/register/*" element={<Registration />} />
+      </Routes>
+    </Router>
+  );
+};
+
+const rootElement = document.getElementById("app");
+createRoot(rootElement).render(<App />);

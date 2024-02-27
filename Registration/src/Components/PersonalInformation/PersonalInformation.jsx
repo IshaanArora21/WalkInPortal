@@ -33,7 +33,7 @@ export default function PersonalInformation(props) {
 
     }
     const handleNavigate = () => {
-        navigateTo('/Qualifications')
+        navigateTo('/register/qualification')
     }
     function handleJobChange(newRole) {
         if (jobRoles.includes(newRole)) {

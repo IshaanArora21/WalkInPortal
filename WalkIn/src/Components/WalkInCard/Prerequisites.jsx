@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PrerequisitesStyles from "./Prerequisites.module.scss"
-export default function Prerequistes() {
+export default function Prerequistes(props) {
     const [showPrerequisites,setShowPrerequisites]=useState(true);
     const notVisible={
        display:'none'
@@ -29,7 +29,7 @@ export default function Prerequistes() {
                         <div className={PrerequisitesStyles.jobValue}>
 
 
-                            <div className="">- { }</div>
+                            <div className=""> { props.general_instructions}</div>
 
 
                         </div>
@@ -43,7 +43,7 @@ export default function Prerequistes() {
                         <div className={PrerequisitesStyles.jobValue}>
 
 
-                            <div className="">- { }</div>
+                            <div className=""> {props.instructions_for_exam }</div>
 
 
                         </div>
@@ -56,7 +56,7 @@ export default function Prerequistes() {
 
                         <div className={PrerequisitesStyles.jobValue}>
 
-                            <div className="">- {`Hello`}</div>
+                            <div className=""> {props.minimum_system_requirements}</div>
 
 
                         </div>
@@ -71,7 +71,7 @@ export default function Prerequistes() {
 
 
 
-                            <div className="">- { }</div>
+                            <div className=""> {props.process}</div>
 
 
                         </div>

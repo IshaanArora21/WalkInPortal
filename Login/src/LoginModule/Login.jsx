@@ -1,10 +1,44 @@
 import React, { useState } from "react";
 import LoginStyles from "./Login.module.scss"
+import axios from "axios"
 import useLoginStore from '../ReactStore/Store'
-export default function Login() {
+import {useNavigate} from "react-router-dom"
+const Login = ()=> {
+  // const navigateTo=useNavigate();
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [rememberMe,setRememberMe]=useState(true);
+  
+  const handleLogin = async () => {
+    const authRequest = {
+      info: {
+        fieldName: "login",
+      },
+      arguments: {
+        user: {
+          email: email,
+          password: password,
+        },
+      },
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/dev/api/handle_graphql",
+        authRequest
+      );
+      if (response.data) {
+        // navigateTo("/walkindrives"); 
+        console.log("success");
+      }
+      return response.data;
+    } catch (error) {
+     
+      console.error("Error in fetchData: &", error.message);
+      throw new Error("Error fetching data");
+    }
+  };
+
   return (
     <div className={LoginStyles.loginMainContainer}>
     <div className={LoginStyles.loginContainer}>
@@ -48,7 +82,7 @@ export default function Login() {
         <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e)=>setRememberMe(e.target.value)}/>Remember Me
       </div>
   
-      <div className={LoginStyles.loginButtonContainer}>
+      <div className={LoginStyles.loginButtonContainer} onClick={handleLogin}>
         <button >LOG IN</button>
       </div>
   
@@ -56,6 +90,7 @@ export default function Login() {
         <p>Not registered yet?</p>
         <a className={LoginStyles.inputForget}
           >CREATE AN ACCOUNT</a>
+        
       </div>
     </div>
     <div className={LoginStyles.moreOptions}>
@@ -66,3 +101,4 @@ export default function Login() {
   </div>
   );
 }
+export default Login;

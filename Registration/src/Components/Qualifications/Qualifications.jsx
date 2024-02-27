@@ -4,19 +4,16 @@ import EducationalQualifications from "./EducationalQualifications"
 import ProfessionalQualifications from "./ProfessionalQualifications"
 import RegistrationProgress from "../RegistrationProgress/RegistrationProgress"
 import { useNavigate } from "react-router-dom";
-import CreateAccount from "../CreateAccount/CreateAccount"
 export default function Qualifications(props){
     const navigate=useNavigate();
     function handleNext(){
-         navigate("/Review")
+         navigate("/register/review")
     }
     function handlePrevious(){
-         navigate("/")
+         navigate("/register")
     }
     return (
         <div>
-            <CreateAccount/>
-            <RegistrationProgress/>
             <EducationalQualifications review={props.review}/>
             
             <ProfessionalQualifications review={props.review}/>

@@ -46,7 +46,9 @@ module.exports = (_, argv) => ({
       remotes: {
         LoginMFE:"LoginMFE@http://localhost:8081/remoteEntry.js",
         RegistrationMFE:"RegistrationMFE@http://localhost:8082/remoteEntry.js",
-        WalkInMFE:"WalkInMFE@http://localhost:8084/remoteEntry.js"
+        WalkInMFE:"WalkInMFE@http://localhost:8084/remoteEntry.js",
+        NavigationMFE:"NavigationMFE@http://localhost:8083/remoteEntry.js"
+
       },
       exposes: {},
       shared: {

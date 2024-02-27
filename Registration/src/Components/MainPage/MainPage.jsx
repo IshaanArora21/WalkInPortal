@@ -6,18 +6,18 @@ import Qualifications from "../Qualifications/Qualifications"
 import Review from "../Review/Review"
 import PersonalInformationCard from "../PersonalInformation/PersonalInformationCard";
 const MainPage = createBrowserRouter([
-  {
-    path: "/",
-    element: <PersonalInformationCard />,
-  },
-  {
-    path: "/Qualifications",
-    element: <Qualifications />,
-  },
-  {
-    path: "/Review",
-    element: <Review />,
-  },
+    {
+        path: "/",
+        element: <PersonalInformationCard />,
+      },
+      {
+        path: "/Qualifications",
+        element: <Qualifications />,
+      },
+      {
+        path: "/Review",
+        element: <Review />,
+      },
 ]);
 
 export default MainPage;

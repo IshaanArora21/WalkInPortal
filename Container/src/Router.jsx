@@ -1,56 +1,30 @@
 import React from "react"
 import { createBrowserRouter } from "react-router-dom";
-import PersonalInformationCard from "RegistrationMFE/PersonalInformationCard"
-import Qualifications from "RegistrationMFE/Qualifications"
-import Drives from "WalkInMFE/Drives"
-import DriveDetails from "WalkInMFE/DriveDetails"
-import WalkInReview from "WalkInMFE/WalkInReview"
+import Registration from "RegistrationMFE/Registration"
+import WalkIn from "WalkInMFE/WalkIn"
 import Login from "LoginMFE/Login"
-import Review from "RegistrationMFE/Review"
 const Router = createBrowserRouter([
+ 
   {
     path: "/",
-    element: <Login />,
+    // element: <Login />,
+  },
+  
+  {
+    path: "/register/*",
+    element: <Registration />,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: "",
+    element: <PersonalInformation />,
   },
   {
-    path: "/registration",
-
-    children: [
-      {
-        path: "/registration",
-        element: <PersonalInformationCard />,
-      },
-      {
-        path: "/registration/qualification",
-        element: <Qualifications />,
-      },
-      {
-        path: "/registration/review",
-        element: <Review />,
-      },
-    ],
+    path: "qualification",
+    element: <Qualifications />,
   },
   {
-    path: "/walkindrives",
-
-    children: [
-      {
-        path: "/walkindrives",
-        element: <Drives />,
-      },
-      {
-        path: "/walkindrives/drive",
-        element: <DriveDetails />,
-      },
-      {
-        path: "/walkindrives/review",
-        element: <WalkInReview />,
-      },
-    ],
+    path: "review",
+    element: <Review />,
   },
   ]);
   
