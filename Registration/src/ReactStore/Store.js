@@ -1,43 +1,28 @@
-import create from 'zustand'
-export const useRegisterStore=create((set)=>({
-    personalInformation:{
-        firstName: '',
-        lastName: '',
-        email: '',
-        mobileNumber: '',
-        resumeFile: '',
-        portfolioUrl: '',
-        referral: '',
-        jobMailUpdates: '',
-        profilePicFile: '',
-        jobRoles: ''
-
-    },
-    educationalQualifications:{
-        percentage: '',
-        year: '',
-        qualification: '',
-        stream: '',
-        college: '',
-        location: '',
-    },
-    professionalQualifications:{
-        applicantType: '',
-        experienceYear: '',
-        currentCtc: '',
-        expectedCtc: '',
-        expertiseTechnology: [], 
-        familiarTechnology: '',
-        noticePeriod: '',
-        noticeEndDate: '',
-        noticeDuration: '',
-        appliedTest: '',
-        appliedRole: '',
-    },
-    setPersonalInformation:(personalInfo)=>
-    set((state) => ({ personalInformation: { ...state.personalInformation, ...personalInfo } })),
-    setEducationalQualifications:(educationInfo)=>
-    set((state) => ({ educationalQualifications: { ...state.educationalQualifications, ...educationInfo } })),
-    setProfessionalQualifictions:(professionalInfo)=>
-    set((state) => ({ professionalQualifications: { ...state.professionalQualifications, ...professionalInfo } })),
+import {create} from 'zustand'
+const useRegisterStore=create((set)=>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    resumeFile: null,
+    password:'',
+    portfolioUrl: "",
+    referral: "",
+    jobMail: true,
+    profilePicFile: null,
+    countryCode: "",
+    jobRoles: ["Instructional Designer", "Software Engineer","Software Quality Engineer"],
+    setFirstName: (value) => set({ firstName: value }),
+    setLastName: (value) => set({ lastName: value }),
+    setEmail: (value) => set({ email: value }),
+    setPassword: (value) => set({ password: value }),
+    setPhoneNumber: (value) => set({ phoneNumber: value }),
+    setResumeFile: (value) => set({ resumeFile: value }),
+    setPortfolioUrl: (value) => set({ portfolioUrl: value }),
+    setReferral: (value) => set({ referral: value }),
+    setJobMail: (value) => set({ jobMail: value }),
+    setProfilePicFile: (value) => set({ profilePicFile: value }),
+    setCountryCode: (value) => set({ countryCode: value }),
+    setJobRoles: (value) => set({ jobRoles: value }),
 }))
+export default useRegisterStore;

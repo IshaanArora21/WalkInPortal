@@ -41,10 +41,13 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "Utility",
+      name: "UtilityMFE",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Pubsub": "./src/Components/Pubsub.js",
+        "./Functions":"./src/Components/Functions.js"
+      },
       shared: {
         ...deps,
         react: {

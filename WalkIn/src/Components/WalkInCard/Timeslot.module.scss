@@ -11,6 +11,7 @@ body {
     padding: 35px 24px;
     display: flex;
     flex-direction: column;
+    font-weight: 600;
 .timeSlotContainer {
     background-color: rgba(255, 255, 255, 1);
     padding: 35px 24px; 
@@ -77,7 +78,6 @@ body {
             justify-content: normal;
             align-items: center;
             gap: 9px;
-
             input[type="checkbox"] {
                 background-color: black;
                 padding: 10px;
@@ -85,6 +85,9 @@ body {
                 height: 24px;
                 margin: 0px;
                 accent-color: rgba(31, 122, 84, 1);
+            }
+            label{
+                display: inline-block;
             }
         }
     }

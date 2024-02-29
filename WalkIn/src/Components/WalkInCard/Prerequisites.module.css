@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  font-family: "Quicksand";
+}
+
+.mainComponent {
+  background-color: rgb(238, 238, 238);
+  padding: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+.mainComponent .dropDown {
+  background-color: rgb(219, 239, 255);
+  cursor: pointer;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainComponent .dropDown > span {
+  margin-left: 16px;
+}
+.mainComponent .dropDown .dd_img_container {
+  height: 56px;
+  width: 32px;
+  border-left: 2px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.mainComponent .singleJobContainer {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.mainComponent .singleJobContainer .jobContainerInfo {
+  background-color: rgb(255, 255, 255);
+  padding: 16px;
+  overflow: hidden;
+}
+.mainComponent .singleJobContainer .jobContainerInfo .jobInfo {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
+  gap: 16px;
+}
+.mainComponent .singleJobContainer .jobContainerInfo .jobInfo .jobHeader {
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+  width: 480px;
+}
+.mainComponent .singleJobContainer .jobContainerInfo .jobInfo .jobValue {
+  font-size: 14px;
+}
+.mainComponent .singleJobContainer .jobContainerInfo .jobInfo .jobValue div {
+  line-height: 24.5px;
+}
+.mainComponent .singleJobContainer .jobContainerInfo hr {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 16px 0px;
+}
+
+@media screen and (max-width: 376px) {
+  .mainContainer {
+    padding-bottom: 76px;
+    overflow-y: hidden;
+  }
+  .mainContainer .goUpComponent {
+    bottom: 48px;
+  }
+  .mainContainer .listContainer .jobContainer .jobRoleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    flex-direction: column;
+  }
+  .mainContainer .listContainer .jobContainer .applyInJob {
+    position: fixed;
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    color: rgb(209, 1, 7);
+    font-size: 12px;
+    border-radius: 2px;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .mainContainer .listContainer .jobContainer .applyInJob .applyButton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(63, 210, 139);
+    color: rgb(37, 49, 63);
+    width: 100vw;
+    height: 28px;
+    border: 0px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+    font-family: "Quicksand";
+    font-weight: 600;
+  }
+  .mainContainer .screenMobile {
+    display: none;
+  }
+}/*# sourceMappingURL=Prerequisites.module.css.map */

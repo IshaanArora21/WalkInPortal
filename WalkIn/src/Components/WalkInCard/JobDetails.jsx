@@ -1,35 +1,31 @@
 import React, { useState } from "react"
 import JobDetailsStyles from "./JobDetails.module.scss"
-export default function JobDetails(props) {
-    const jobRoles = props.job_Roles || [];
-    const [showDetails, setShowDetails] = useState(new Array(jobRoles.length).fill(false));
-    const notVisible = {
-        display: 'none'
+export default function JobDetails({jobDetails}) {
+    const [showJobDesc, setShowJobDesc] = useState(false);
+    const notVisible={
+        display:'none'
     }
-    const toggleDetails = (index) => {
-        const newShowDetails = [...showDetails];
-        newShowDetails[index] = !newShowDetails[index];
-        setShowDetails(newShowDetails);
-      };
+    const openJob = () => {
+      setShowJobDesc(!showJobDesc);
+    };
     return (
         <div className={JobDetailsStyles.mainComponent}>
-            {props.job_Roles?.map((job, index) => (
-                <div key={index} className={JobDetailsStyles.singleJobContainer}>
-                    <div className={JobDetailsStyles.dropDown} onClick={() => toggleDetails(index)}>
-                        <span>{job.job_title}</span>
+                <div className={JobDetailsStyles.singleJobContainer}>
+                    <div className={JobDetailsStyles.dropDown} onClick={openJob}>
+                        <span>{jobDetails.job_title}</span>
                         <div>
                             <img
-                                src={showDetails[index] ? "/assets/icons/expand_less_black_24dp.svg" : "/assets/icons/arrow-down.svg"}
+                                src={showJobDesc ? "/assets/icons/expand_less_black_24dp.svg" : "/assets/icons/arrow-down.svg"}
                                 alt="expand less/more icon"
                             />
                         </div>
                     </div>
 
-                    <div className={JobDetailsStyles.jobContainerInfo} style={showDetails[index] ? {} : notVisible}>
+                    <div className={JobDetailsStyles.jobContainerInfo} style={showJobDesc ? {} : notVisible}>
                         <div className={JobDetailsStyles.jobInfo}>
                             <div className={JobDetailsStyles.jobHeader}>gross compensation package :</div>
                             <div className={JobDetailsStyles.jobValue}>
-                                Rs. {job.package} lpa
+                                Rs. {jobDetails.package} lpa
                             </div>
                         </div>
 
@@ -38,7 +34,7 @@ export default function JobDetails(props) {
                         <div className={JobDetailsStyles.jobInfo}>
                             <div className={JobDetailsStyles.jobHeader}>Role Description :</div>
                             <div className={JobDetailsStyles.jobValue}>
-                                <div>{job.job_description}</div>
+                                <div>{jobDetails.job_description}</div>
                             </div>
                         </div>
 
@@ -47,12 +43,11 @@ export default function JobDetails(props) {
                         <div className={JobDetailsStyles.jobInfo}>
                             <div className={JobDetailsStyles.jobHeader}>Requirements :</div>
                             <div className={JobDetailsStyles.jobValue}>
-                                <div>{job.job_requirements}</div>
+                                <div>{jobDetails.job_requirements}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            ))}
 
 
         </div>

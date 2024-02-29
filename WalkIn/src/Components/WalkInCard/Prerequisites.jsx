@@ -1,18 +1,18 @@
 import React, { useState } from "react"
 import PrerequisitesStyles from "./Prerequisites.module.scss"
-export default function Prerequistes(props) {
-    const [showPrerequisites,setShowPrerequisites]=useState(true);
-    const notVisible={
-       display:'none'
+export default function Prerequistes({ driveDetails }) {
+    const [showPrerequisites, setShowPrerequisites] = useState(true);
+    const notVisible = {
+        display: 'none'
     }
     return (
         <div className={PrerequisitesStyles.mainComponent}>
-            <div className={PrerequisitesStyles.dropDown} onClick={()=>setShowPrerequisites(!showPrerequisites)}>
+            <div className={PrerequisitesStyles.dropDown} onClick={() => setShowPrerequisites(!showPrerequisites)}>
                 <span>Pre-requisites & Application Process</span>
                 <div>
 
                     <img
-                        src={showPrerequisites?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
+                        src={showPrerequisites ? "/assets/icons/expand_less_black_24dp.svg" : "/assets/icons/arrow-down.svg"}
                         alt="expand less/more icon"
 
                     />
@@ -20,7 +20,7 @@ export default function Prerequistes(props) {
             </div>
 
             <div
-                className={PrerequisitesStyles.singleJobContainer} style={showPrerequisites?{}:notVisible}
+                className={PrerequisitesStyles.singleJobContainer} style={showPrerequisites ? {} : notVisible}
             >
                 <div className={PrerequisitesStyles.jobContainerInfo}>
                     <div className={PrerequisitesStyles.jobInfo}>
@@ -29,7 +29,22 @@ export default function Prerequistes(props) {
                         <div className={PrerequisitesStyles.jobValue}>
 
 
-                            <div className=""> { props.general_instructions}</div>
+                            <div className="">
+                                {driveDetails.general_instructions &&
+                                    (() => {
+                                        const sentences = driveDetails.general_instructions.split('. ');
+                                        const lastSentence = sentences.pop();
+                                        return (
+                                            <>
+                                                {sentences.map((sentence, index) => (
+                                                    <div key={index}>-{sentence.trim()}.</div>
+                                                ))}
+                                                {lastSentence && <div key={sentences.length}>{lastSentence.trim()}.</div>}
+                                            </>
+                                        );
+                                    })()}
+                            </div>
+
 
 
                         </div>
@@ -43,7 +58,22 @@ export default function Prerequistes(props) {
                         <div className={PrerequisitesStyles.jobValue}>
 
 
-                            <div className=""> {props.instructions_for_exam }</div>
+                            <div className="">
+                                {driveDetails.instructions_for_exam &&
+                                    (() => {
+                                        const sentences = driveDetails.instructions_for_exam.split('. ');
+                                        const lastSentence = sentences.pop(); // Remove the last sentence
+                                        return (
+                                            <>
+                                                {sentences.map((sentence, index) => (
+                                                    <div key={index}>-{sentence.trim()}.</div>
+                                                ))}
+                                                {lastSentence && <div key={sentences.length}>{lastSentence.trim()}.</div>}
+                                            </>
+                                        );
+                                    })()}
+                            </div>
+
 
 
                         </div>
@@ -56,7 +86,22 @@ export default function Prerequistes(props) {
 
                         <div className={PrerequisitesStyles.jobValue}>
 
-                            <div className=""> {props.minimum_system_requirements}</div>
+                            <div className="">
+                                {driveDetails.minimum_system_requirements &&
+                                    (() => {
+                                        const sentences = driveDetails.minimum_system_requirements.split('. ');
+                                        const lastSentence = sentences.pop();
+                                        return (
+                                            <>
+                                                {sentences.map((sentence, index) => (
+                                                    <div key={index}>-{sentence.trim()}.</div>
+                                                ))}
+                                                {lastSentence && <div key={sentences.length}>{lastSentence.trim()}.</div>}
+                                            </>
+                                        );
+                                    })()}
+                            </div>
+
 
 
                         </div>
@@ -71,7 +116,22 @@ export default function Prerequistes(props) {
 
 
 
-                            <div className=""> {props.process}</div>
+                            <div className="">
+                                {driveDetails.process &&
+                                    (() => {
+                                        const sentences = driveDetails.process.split('. ');
+                                        const lastSentence = sentences.pop(); 
+                                        return (
+                                            <>
+                                                {sentences.map((sentence, index) => (
+                                                    <div key={index}>-{sentence.trim()}.</div>
+                                                ))}
+                                                {lastSentence && <div key={sentences.length}>{lastSentence.trim()}.</div>}
+                                            </>
+                                        );
+                                    })()}
+                            </div>
+
 
 
                         </div>

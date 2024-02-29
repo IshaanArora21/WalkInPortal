@@ -152,6 +152,11 @@ body{
     justify-content: normal;
     align-items: center;
     gap: 9px;
+    label{
+      font-family:'Quicksand';
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
   
   .singleCheckboxContainer input[type="checkbox"] {

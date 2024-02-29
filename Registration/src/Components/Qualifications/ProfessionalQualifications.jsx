@@ -1,75 +1,71 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import ProfessionalQualificationsStyles from "./ProfessionalQualifications.module.scss"
+import useQualificationStore from "../../ReactStore/QualificationsStore";
 export default function ProfessionalQualifications(props) {
   const [showQualificationDetails, setShowQualificationDetails] = useState(true)
-  const [isFresher, setIsFresher] = useState(false);
-  const [experienceYear, setExperienceYear] = useState("");
-  const [currentCtc, setCurrentCtc] = useState("");
-  const [expectedCtc, setExpectedCtc] = useState("");
-  const [noticePeriod, setNoticePeriod] = useState(false);
-  const [noticeEndDate, setNoticeEndDate] = useState("");
-  const [noticeDuration, setNoticeDuration] = useState("");
-  const [appliedTest, setAppliedTest] = useState(false);
-  const [appliedRole, setAppliedRole] = useState("");
-  const [otherExpertiseTechnologies, setOtherExpertiseTechnologies] =
-    useState("");
-  const [otherFamiliarTechnologies, setOtherFamiliarTechnologies] =
-    useState("");
-  const [expertiseTechnology, setExpertiseTechnology] = useState([
-    "Javascript",
-  ]);
-  const [familiarTechnology, setFamiliarTechnology] = useState([
-    "Angular JS",
-    "Node JS",
-  ]);
-  const notVisible={
-    display:'none'
+  const {
+    isFresher,
+    setIsFresher,
+    experienceYear,
+    setExperienceYear,
+    currentCtc,
+    setCurrentCtc,
+    expectedCtc,
+    setExpectedCtc,
+    noticePeriod,
+    setNoticePeriod,
+    noticeEndDate,
+    setNoticeEndDate,
+    noticeDuration,
+    setNoticeDuration,
+    appliedTest,
+    setAppliedTest,
+    appliedRole,
+    setAppliedRole,
+    otherExpertiseTechnologies,
+    setOtherExpertiseTechnologies,
+    otherFamiliarTechnologies,
+    setOtherFamiliarTechnologies,
+    expertiseTechnology,
+    setExpertiseTechnology,
+    familiarTechnology,
+    setFamiliarTechnology,
+  } = useQualificationStore();
+
+  const notVisible = {
+    display: 'none'
   }
-  const professionalQualifications={
-    applicantType: isFresher ? "fresher" : "experienced",
-    experienceYear: isFresher ? "0" : experienceYear,
-    currentCtc: isFresher ? "0" : currentCtc,
-    expectedCtc: isFresher ? "0" : expectedCtc,
-    // If fresher then no expertise
-    expertiseTechnology: isFresher ? [] : expertiseTechnology, 
-    familiarTechnology: familiarTechnology,
-    noticePeriod: noticePeriod,
-    noticeEndDate: noticeEndDate,
-    noticeDuration: noticeDuration,
-    appliedTest: appliedTest,
-    appliedRole: appliedRole,
-  }
-  function handleFamiliarTechnology(technology){
-    if(familiarTechnology.includes(technology)){
+  function handleFamiliarTechnology(technology) {
+    if (familiarTechnology.includes(technology)) {
       setFamiliarTechnology(
-        familiarTechnology.filter((selectedFamiliarTechnology)=>selectedFamiliarTechnology!==technology)
+        familiarTechnology.filter((selectedFamiliarTechnology) => selectedFamiliarTechnology !== technology)
       )
     }
-    else{
-        setFamiliarTechnology([technology,...familiarTechnology])
+    else {
+      setFamiliarTechnology([technology, ...familiarTechnology])
     }
   }
-  function handleExpertiseTechnology(technology){
-     if(expertiseTechnology.includes(technology)){
-        setExpertiseTechnology(expertiseTechnology.filter((selectedExpertiseTechnology)=>selectedExpertiseTechnology!==technology))
-     }
-     else{
-       setExpertiseTechnology([technology,...expertiseTechnology])
-     }
+  function handleExpertiseTechnology(technology) {
+    if (expertiseTechnology.includes(technology)) {
+      setExpertiseTechnology(expertiseTechnology.filter((selectedExpertiseTechnology) => selectedExpertiseTechnology !== technology))
+    }
+    else {
+      setExpertiseTechnology([technology, ...expertiseTechnology])
+    }
   }
   return (
-    <div>
-      <div className={ProfessionalQualificationsStyles.dropDown} onClick={()=>setShowQualificationDetails(!showQualificationDetails)}>
+    <>
+      <div className={ProfessionalQualificationsStyles.dropDown} onClick={() => setShowQualificationDetails(!showQualificationDetails)}>
         <span>Professional Qualifications</span>
         <div>
           <img
-            src={showQualificationDetails?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
+            style={{ cursor: 'pointer' }}
+            src={showQualificationDetails ? "/assets/icons/expand_less_black_24dp.svg" : "/assets/icons/arrow-down.svg"}
             alt="expand less/more icon"
           />
         </div>
       </div>
-
-      <div className={ProfessionalQualificationsStyles.stepInputContainer} style={showQualificationDetails?{}:notVisible}>
+      <div className={ProfessionalQualificationsStyles.stepInputContainer} style={showQualificationDetails ? {} : notVisible}>
         <div className={`${ProfessionalQualificationsStyles.stepInputs}`}>
           <div className={ProfessionalQualificationsStyles.singleInputContainer}>
             <label htmlFor="applicantType">Applicant Type*</label>
@@ -80,6 +76,7 @@ export default function ProfessionalQualifications(props) {
                   name="applicantType"
                   id="applicantType1"
                   disabled={props.review}
+                  checked={isFresher}
                   onClick={() => {
                     setIsFresher(true);
                   }}
@@ -93,6 +90,7 @@ export default function ProfessionalQualifications(props) {
                   name="applicantType"
                   id="applicantType2"
                   disabled={props.review}
+                  checked={!isFresher}
                   onClick={() => {
                     setIsFresher(false);
                   }}
@@ -102,16 +100,18 @@ export default function ProfessionalQualifications(props) {
             </div>
           </div>
         </div>
-        {!isFresher ?
+
+        {!isFresher &&
           <div className={ProfessionalQualificationsStyles.stepInputs}>
             <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
-              <label for="yearsOfExperience">Years of Experience*</label>
+              <label htmlFor="yearsOfExperience">Years of Experience*</label>
               <input
                 className={ProfessionalQualificationsStyles.wSmall}
                 type="number"
                 name="yearsOfExperience"
                 id="yearsOfExperience"
                 disabled={props.review}
+                value={experienceYear}
                 onChange={(e) => {
                   setExperienceYear(e.target.value);
                 }}
@@ -119,13 +119,14 @@ export default function ProfessionalQualifications(props) {
             </div>
 
             <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
-              <label for="currentCTC">Current CTC* (In Rupees)</label>
+              <label htmlFor="currentCTC">Current CTC* (In Rupees)</label>
               <input
                 className={ProfessionalQualificationsStyles.wSmall}
                 type="text"
                 name="currentCTC"
                 id="currentCTC"
                 disabled={props.review}
+                value={currentCtc}
                 onChange={(e) => {
                   setCurrentCtc(e.target.value);
                 }}
@@ -133,12 +134,13 @@ export default function ProfessionalQualifications(props) {
             </div>
 
             <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
-              <label for="expectedCTC">Expected CTC* (In Rupees)</label>
+              <label htmlFor="expectedCTC">Expected CTC* (In Rupees)</label>
               <input
                 className={ProfessionalQualificationsStyles.wSmall}
                 type="text"
                 name="expectedCTC"
                 id="expectedCTC"
+                value={expectedCtc}
                 disabled={props.review}
                 onChange={(e) => {
                   setExpectedCtc(e.target.value);
@@ -150,65 +152,136 @@ export default function ProfessionalQualifications(props) {
               <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
               >Select All The Technologies You Expertise In*</span>
 
-              <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
-                <input
-                  type="checkbox"
-                  id="e_technology"
-                  disabled={props.review}
-                  onChange={() => handleExpertiseTechnology()}
-                />
-                <label htmlFor="e_technology">{ }</label>
-              </div>
+             
+                <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                  <input
+                    type="checkbox"
+                    id={`technology_`}
+                    disabled={props.review}
+                    checked={expertiseTechnology.includes("Javascript")}
+                    onChange={() => handleExpertiseTechnology('Javascript')}
+                  />
+                  <label htmlFor={`technology_`}>{'Javascript'}</label>
+                </div>
+                <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                  <input
+                    type="checkbox"
+                    id={`technology_`}
+                    checked={expertiseTechnology.includes("Angular JS")}
+                    disabled={props.review}
+                    onChange={() => handleExpertiseTechnology('Angular JS')}
+                  />
+                  <label htmlFor={`technology_`}>{'Angular JS'}</label>
+                </div>
+                <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                  <input
+                    type="checkbox"
+                    id={`technology_`}
+                    disabled={props.review}
+                    checked={expertiseTechnology.includes("Node JS")}
+                    onChange={() => handleExpertiseTechnology('Node JS')}
+                  />
+                  <label htmlFor={`technology_`}>{'Node JS'}</label>
+                </div>
+                <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                  <input
+                    type="checkbox"
+                    id={`technology_`}
+                    disabled={props.review}
+                    checked={expertiseTechnology.includes("React")}
+                    onChange={() => handleExpertiseTechnology('React')}
+                  />
+                  <label htmlFor={`technology_`}>{'React'}</label>
+                </div>
+            
 
 
               <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
-                <label for="e_otherTechnologies">If others, please mention</label>
+                <label htmlFor="e_otherTechnologies">If others, please mention</label>
                 <input
                   className={ProfessionalQualificationsStyles.specificWidth}
                   type="text"
                   name="e_otherTechnologies"
                   id="e_otherTechnologies"
                   disabled={props.review}
+                  value={otherExpertiseTechnologies}
                   onChange={(e) => {
                     setOtherExpertiseTechnologies(e.target.value);
                   }}
                 />
               </div>
             </div>
+          </div>
+        }
+        <div className={ProfessionalQualificationsStyles.stepInputs}>
+          <div className={ProfessionalQualificationsStyles.technologiesContainer}>
+            <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
+            >Select All The Technologies You Are Familiar In</span>
 
-            <div className={ProfessionalQualificationsStyles.technologiesContainer}>
-              <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
-              >Select All The Technologies You Are Familiar In</span>
 
 
 
-
-              <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+            
+              <div  className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
                 <input
                   type="checkbox"
-                  id="f_ + technology"
+                  id={`technology_`}
                   disabled={props.review}
-                  onChange={() => handleFamiliarTechnology()}
+                  checked={familiarTechnology.includes("Javascript")}
+                  onChange={() => handleFamiliarTechnology("Javascript")}
                 />
-                <label htmlFor="f_technology">{ }</label>
+                <label htmlFor={`technology_`}>{"Javascript"}</label>
               </div>
-
-
-              <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
-                <label for="f_otherTechnologies">If others, please mention</label>
+              <div  className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
                 <input
-                  className={ProfessionalQualificationsStyles.specificWidth}
-                  type="text"
-                  name="f_otherTechnologies"
-                  id="f_otherTechnologies"
+                  type="checkbox"
+                  id={`technology_`}
                   disabled={props.review}
-                  onChange={(e) => {
-                    setOtherFamiliarTechnologies(e.target.value);
-                  }}
+                  checked={familiarTechnology.includes("Angular JS")}
+                  onChange={() => handleFamiliarTechnology("Angular JS")}
                 />
+                <label htmlFor={`technology_`}>{"Angular JS"}</label>
               </div>
-            </div>
+              <div  className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                <input
+                  type="checkbox"
+                  id={`technology_`}
+                  disabled={props.review}
+                  checked={familiarTechnology.includes("Node JS")}
+                  onChange={() => handleFamiliarTechnology("Node JS")}
+                />
+                <label htmlFor={`technology_`}>{"Node JS"}</label>
+              </div>
+              <div  className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
+                <input
+                  type="checkbox"
+                  id={`technology_`}
+                  disabled={props.review}
+                  checked={familiarTechnology.includes("React")}
+                  onChange={() => handleFamiliarTechnology("React")}
+                />
+                <label htmlFor={`technology_`}>{"React"}</label>
+              </div>
 
+
+            <div className={`${ProfessionalQualificationsStyles.singleInputContainer}`}>
+              <label htmlFor="f_otherTechnologies">If others, please mention</label>
+              <input
+                className={ProfessionalQualificationsStyles.specificWidth}
+                type="text"
+                name="f_otherTechnologies"
+                id="f_otherTechnologies"
+                disabled={props.review}
+                value={otherFamiliarTechnologies}
+                onChange={(e) => {
+                  setOtherFamiliarTechnologies(e.target.value);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+        {!isFresher &&
+          <div className={ProfessionalQualificationsStyles.stepInputs}>
             <div className={ProfessionalQualificationsStyles.flex16}>
               <div className={ProfessionalQualificationsStyles.radioConatiner}>
                 <span className={ProfessionalQualificationsStyles.radioContainerLabel}
@@ -219,6 +292,7 @@ export default function ProfessionalQualifications(props) {
                       type="radio"
                       name="isInNoticePeriod"
                       disabled={props.review}
+                      checked={noticePeriod}
                       onChange={() => {
                         setNoticePeriod(true);
                       }}
@@ -231,6 +305,7 @@ export default function ProfessionalQualifications(props) {
                       type="radio"
                       name="isInNoticePeriod"
                       disabled={props.review}
+                      checked={!noticePeriod}
                       onChange={() => {
                         setNoticePeriod(false);
                       }}
@@ -249,6 +324,7 @@ export default function ProfessionalQualifications(props) {
                     name="noticePeriodEnd"
                     id="noticePeriodEnd"
                     disabled={props.review}
+                    value={noticeEndDate}
                     onChange={(e) => {
                       setNoticeEndDate(e.target.value);
                     }}
@@ -262,6 +338,7 @@ export default function ProfessionalQualifications(props) {
                     name="noticePeriodLength"
                     id="noticePeriodLength"
                     disabled={props.review}
+                    value={noticeDuration}
                     onChange={(e) => {
                       setNoticeDuration(e.target.value);
                     }}
@@ -274,135 +351,58 @@ export default function ProfessionalQualifications(props) {
                 </div>
               </div>
             </div>
-
-            <div className={ProfessionalQualificationsStyles.flex16}>
-              <div className={ProfessionalQualificationsStyles.radioConatiner}>
-                <span className={ProfessionalQualificationsStyles.radioContainerLabel}
-                >Have You Appeared For Any Test By Zeus in the past 12 months?*</span>
-                <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
-                  <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
-                    <input
-                      type="radio"
-                      name="isAppearedInTestByZeus"
-                      id="isAppearedInTestByZeus_yes"
-                      disabled={props.review}
-                      onChange={() => setAppliedTest(true)}
-                    />
-                    <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
-                  </div>
-
-                  <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
-                    <input
-                      type="radio"
-                      name="isAppearedInTestByZeus"
-                      id="isAppearedInTestByZeus_no"
-                      disabled={props.review}
-                      onChange={() => setAppliedTest(false)}
-                    />
-                    <label htmlFor="isAppearedInTestByZeus_no">No</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className={ProfessionalQualificationsStyles.singleInputContainer}>
-                <label for="appearedRoleName"
-                >If Yes, which role did you apply for?</label>
-                <input
-                  className={ProfessionalQualificationsStyles.specificWidth}
-                  type="text"
-                  name="appearedRoleName"
-                  id="appearedRoleName"
-                  disabled={props.review}
-                  onChange={(e) => {
-                    setAppliedRole(e.target.value);
-                  }}
-                />
-              </div>
-            </div>
           </div>
-
-          :
-          <div className={ProfessionalQualificationsStyles.stepInputs}>
-            <div className={ProfessionalQualificationsStyles.technologiesContainer}>
-              <span className={ProfessionalQualificationsStyles.technologiesContainerLabel}
-              >Select All The Technologies You Are Familiar In</span>
-
-              <div className={ProfessionalQualificationsStyles.singleCheckboxContainer}>
-                <input
-                  type="checkbox"
-                  id="f_technology"
-                  disabled={props.review}
-                  onChange={() => handleFamiliarTechnology()}
-                 
-                />
-                <label htmlFor="f_technology">{ }</label>
-              </div>
-
-              <div className={ProfessionalQualificationsStyles.singleInputContainer}>
-                <label for="otherTechnologies">If others, please mention</label>
-                <input
-                  className={ProfessionalQualificationsStyles.specificWidth}
-                  type="text"
-                  name="otherTechnologies"
-                  id="otherTechnologies"
-                  disabled={props.review}
-                  onChange={(e) => {
-                    setOtherFamiliarTechnologies(e.target.value);
-                  }}
-                />
-              </div>
-            </div>
-
-            <div className={ProfessionalQualificationsStyles.flex16}>
-              <div className={ProfessionalQualificationsStyles.radioConatiner}>
-                <span className={ProfessionalQualificationsStyles.radioContainerLabel}
-                >Have You Appeared For Any Test By Zeus in the past 12 months?*</span>
-                <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
-                  <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
-                    <input
-                      type="radio"
-                      name="isAppearedInTestByZeus"
-                      id="isAppearedInTestByZeus_yes"
-                      disabled={props.review}
-                      onChange={() => setAppliedTest(true)}
-                    />
-                    <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
-                  </div>
-
-                  <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
-                    <input
-                      type="radio"
-                      name="isAppearedInTestByZeus"
-                      id="isAppearedInTestByZeus_no"
-                      disabled={props.review}
-                      onChange={() => setAppliedTest(false)}
-                    />
-                    <label htmlFor="isAppearedInTestByZeus_no">No</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className={ProfessionalQualificationsStyles.singleInputContainer}>
-                <label htmlFor="appearedRoleName"
-                >If Yes, which role did you apply for?</label>
-                <input
-                  className={ProfessionalQualificationsStyles.specificWidth}
-                  type="text"
-                  name="appearedRoleName"
-                  id="appearedRoleName"
-                  disabled={props.review}
-                  onChange={(e) => {
-                    setAppliedRole(e.target.value);
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
         }
+        <div className={ProfessionalQualificationsStyles.stepInputs}>
+          <div className={ProfessionalQualificationsStyles.flex16}>
+            <div className={ProfessionalQualificationsStyles.radioConatiner}>
+              <span className={ProfessionalQualificationsStyles.radioContainerLabel}
+              >Have You Appeared For Any Test By Zeus in the past 12 months?*</span>
+              <div className={ProfessionalQualificationsStyles.radioContainerOptions}>
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
+                  <input
+                    type="radio"
+                    name="isAppearedInTestByZeus"
+                    id="isAppearedInTestByZeus_yes"
+                    disabled={props.review}
+                    checked={appliedTest}
+                    onChange={() => setAppliedTest(true)}
+                  />
+                  <label htmlFor="isAppearedInTestByZeus_yes">Yes</label>
+                </div>
 
+                <div className={ProfessionalQualificationsStyles.singleRadioContainer}>
+                  <input
+                    type="radio"
+                    name="isAppearedInTestByZeus"
+                    id="isAppearedInTestByZeus_no"
+                    disabled={props.review}
+                    checked={!appliedTest}
+                    onChange={() => setAppliedTest(false)}
+                  />
+                  <label htmlFor="isAppearedInTestByZeus_no">No</label>
+                </div>
+              </div>
+            </div>
+
+            <div className={ProfessionalQualificationsStyles.singleInputContainer}>
+              <label htmlFor="appearedRoleName"
+              >If Yes, which role did you apply for?</label>
+              <input
+                className={ProfessionalQualificationsStyles.specificWidth}
+                type="text"
+                name="appearedRoleName"
+                id="appearedRoleName"
+                disabled={props.review}
+                value={appliedRole}
+                onChange={(e) => {
+                  setAppliedRole(e.target.value);
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
+    </>
   )
 }

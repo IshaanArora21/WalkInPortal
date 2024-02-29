@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  font-family: "Quicksand";
+}
+
+.mainComponent {
+  padding: 76px 24px 40px;
+  background-color: rgb(238, 238, 238);
+  min-height: 81vh;
+}
+.mainComponent .hallTicketComponent {
+  background-color: rgb(255, 255, 255);
+  padding: 74px 16px 24px;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.24);
+}
+.mainComponent .hallTicketComponent > img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  top: -50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29);
+  background-clip: padding-box;
+  border-radius: 50%;
+}
+.mainComponent .hallTicketComponent hr {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 16px 0px;
+}
+.mainComponent .hallTicketComponent > h1 {
+  margin: 0px;
+  font-size: 18px;
+  padding-bottom: 8px;
+}
+.mainComponent .hallTicketComponent .subComponent {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
+  gap: 8px;
+}
+.mainComponent .hallTicketComponent .subComponent .component_title {
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+}
+.mainComponent .hallTicketComponent .subComponent .component_value {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.mainComponent .hallTicketComponent .subComponent .address_value {
+  font-size: 14px;
+  line-height: 20px;
+}
+.mainComponent .hallTicketComponent button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(63, 210, 139);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12);
+  width: 202px;
+  height: 28px;
+  border: none;
+  margin: 0px auto;
+}
+
+.downloadHallTicket {
+  font-family: "Quicksand";
+}
+
+@media screen and (max-width: 376px) {
+  .mainComponent .hallTicketComponent > h1 {
+    text-align: center;
+  }
+}/*# sourceMappingURL=WalkInReview.module.css.map */

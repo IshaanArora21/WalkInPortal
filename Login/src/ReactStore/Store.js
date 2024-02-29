@@ -1,12 +1,14 @@
-import {create} from "zustand"
+import { create } from "zustand";
 
-const useLoginStore = create((set) => ({
-    email: '',
-    password: '',
-    rememberMe: false,
-    setEmail: (newEmail) => set({ email: newEmail }),
-    setPassword: (newPassword) => set({ password: newPassword }),
-    setRememberMe: (value) => set({ rememberMe: value }),
-  }));
-  
-  export default useLoginStore;
+import pubsub from "UtilityMFE/Pubsub";
+
+export const useLoginStore = create((set) => ({
+  isUserLoggedIn: false,
+  userDetails: {},
+  userLogin: (userDetails) =>
+    set((state) => ({ isUserLoggedIn: true, userDetails })),
+}));
+
+export const publishLoginEvent = (userLoginDetails) => {
+  pubsub.publish("USER_LOGIN", userLoginDetails);
+};

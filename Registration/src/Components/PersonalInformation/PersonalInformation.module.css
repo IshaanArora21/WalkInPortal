@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  margin: 0px;
+  font-family: "Quicksand";
+}
+
+.personalInformationContainer {
+  padding: 24px;
+  background-color: rgb(255, 255, 255);
+}
+
+.personalInformationForm {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
+  position: relative;
+  gap: 40px;
+}
+
+.userPicture {
+  position: absolute;
+  width: 150px;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+}
+
+#userPictureInput {
+  display: none;
+}
+
+.displayPicture {
+  width: 112px;
+  height: 112px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.userPictureTitle {
+  font-size: 12px;
+  color: rgb(31, 122, 84);
+  margin: 16px 0px 8px;
+}
+
+.userPictureInfo {
+  color: rgb(117, 117, 117);
+  font-size: 10px;
+}
+
+.personalInformationContainer label {
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+  width: 480px;
+}
+
+.personalInformationContainer input {
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.personalInformationContainer input:focus {
+  outline: none;
+}
+
+.input[type=number]::-webkit-inner-spin-button,
+.input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.personalInformationContainer input[type=checkbox] {
+  width: 18px;
+  height: 24px;
+  margin: 0px;
+  accent-color: rgb(31, 122, 84);
+}
+
+.preferredJobRoles {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputSingleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.referralLabel {
+  letter-spacing: 0.3px;
+  width: 480px;
+}
+
+.inputString {
+  padding-bottom: 4px;
+  font-size: 16px;
+  width: 480px;
+}
+
+.uploadResumeContainer span {
+  color: rgb(31, 122, 84);
+  font-size: 14px;
+}
+
+.inputFileLabel {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: rgb(31, 122, 84);
+}
+
+.uploadResumeContainer #inputFile {
+  display: none;
+}
+
+#inputFile::-webkit-file-upload-button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+
+.phoneNumberContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 4px;
+}
+
+.addText {
+  width: 9px;
+  height: 20px;
+}
+
+.countryCode {
+  width: 22px;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.phoneNumber {
+  width: 95px;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.checkboxSingleContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 9px;
+}
+
+.normalLabel {
+  color: rgb(34, 34, 34);
+  font-size: 16px;
+}
+
+.stepMovingButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0px 21px;
+}
+
+.nextPreviousButton {
+  width: 90px;
+  cursor: pointer;
+  height: 28px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  border: none;
+  background-color: rgb(63, 210, 139);
+  color: rgb(31, 40, 52);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Quicksand";
+}/*# sourceMappingURL=PersonalInformation.module.css.map */

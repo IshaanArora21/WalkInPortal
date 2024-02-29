@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import EducationalQualificationsStyles from "./EducationalQualifications.module.scss"
-
+import useQualificationStore from "../../ReactStore/QualificationsStore"
 export default function EducationalQualifications(props) {
     const [showEducationDetails,setShowEducationDetails]=useState(true)
-    const [percentage, setPercentage] = useState('');
-    const [year, setYear] = useState('');
-    const [qualification, setQualification] = useState('');
-    const [stream, setStream] = useState("");
-    const [college, setCollege] = useState('');
-    const [otherCollege, setOtherCollege] = useState("");
-    const [location, setLocation] = useState('');
+    const {
+        percentage,
+        year,
+        qualification,
+        stream,
+        college,
+        otherCollege,
+        location,
+        setPercentage,
+        setYear,
+        setQualification,
+        setStream,
+        setCollege,
+        setOtherCollege,
+        setLocation,
+      } = useQualificationStore();
     const notVisible={
         display:"none"
-    }
-    const educationDetails={
-        percentage: percentage,
-        year: year,
-        qualification: qualification,
-        stream: stream,
-        college: college === "Others" ? otherCollege : college,
-        location: location,
     }
     return (
         <div className={EducationalQualificationsStyles.educationalQualifications} >
@@ -28,6 +29,7 @@ export default function EducationalQualifications(props) {
                 <div
                 >
                     <img
+                        style={{cursor:'pointer'}}
                         src={showEducationDetails?"/assets/icons/expand_less_black_24dp.svg":"/assets/icons/arrow-down.svg"}
                         alt="expand less/more icon"
                     />
@@ -39,12 +41,13 @@ export default function EducationalQualifications(props) {
             >
                 <div className={EducationalQualificationsStyles.stepInputs}>
                     <div className={EducationalQualificationsStyles.singleInputContainer}>
-                        <label for="aggregatePercentage">Aggregate Percentage*</label>
+                        <label htmlFor="aggregatePercentage">Aggregate Percentage*</label>
                         <input
                             className={EducationalQualificationsStyles.wSmall}
                             type="number"
                             id="aggregatePercentage"
                             disabled={props.review}
+                            value={percentage}
                             onChange={(e) => {
                                 setPercentage(e.target.value);
                               }}
@@ -52,11 +55,12 @@ export default function EducationalQualifications(props) {
                     </div>
 
                     <div className={EducationalQualificationsStyles.singleInputContainer}>
-                        <label for="passingYear">Year of Passing*</label>
+                        <label htmlFor="passingYear">Year of Passing*</label>
                         <select
                             className={EducationalQualificationsStyles.wSmall}
                             name="passingYear"
                             id="passingYear"
+                            value={year}
                             disabled={props.review}
                             onChange={(e) => {
                                 setYear(e.target.value);
@@ -71,10 +75,11 @@ export default function EducationalQualifications(props) {
 
                     <div className={EducationalQualificationsStyles.doubleInputContainer}>
                         <div className={EducationalQualificationsStyles.singleInputContainer}>
-                            <label for="qualification">Qualification*</label>
+                            <label htmlFor="qualification">Qualification*</label>
                             <select
                                 name="qualification"
                                 id="qualification"
+                                value={qualification}
                                 disabled={props.review}
                                 onChange={(e) => {
                                     setQualification(e.target.value);
@@ -88,11 +93,12 @@ export default function EducationalQualifications(props) {
                         </div>
 
                         <div className={EducationalQualificationsStyles.singleInputContainer}>
-                            <label for="stream">Stream*</label>
+                            <label htmlFor="stream">Stream*</label>
                             <select
                                 name="stream"
                                 id="stream"
                                 disabled={props.review}
+                                value={stream}
                                 onChange={(e) => {
                                     setStream(e.target.value);
                                   }}
@@ -106,11 +112,12 @@ export default function EducationalQualifications(props) {
 
                     <div className={EducationalQualificationsStyles.doubleInputContainer}>
                         <div className={EducationalQualificationsStyles.singleInputContainer}>
-                            <label for="collegeName">College*</label>
+                            <label htmlFor="collegeName">College*</label>
                             <select
                                 name="collegeName"
                                 id="collegeName"
                                 disabled={props.review}
+                                value={college}
                                 onChange={(e) => {
                                     setCollege(e.target.value);
                                   }}
@@ -122,13 +129,14 @@ export default function EducationalQualifications(props) {
                         </div>
 
                         <div className={EducationalQualificationsStyles.singleInputContainer}>
-                            <label for="otherCollegeName"
+                            <label htmlFor="otherCollegeName"
                             >If others, please enter your college name</label>
                             <input
                                 type="text"
                                 name="otherCollageName"
                                 id="otherCollageName"
                                 disabled={props.review}
+                                value={otherCollege}
                                 onChange={(e) => {
                                     setOtherCollege(e.target.value);
                                   }}
@@ -137,11 +145,12 @@ export default function EducationalQualifications(props) {
                     </div >
 
                     <div className={EducationalQualificationsStyles.singleInputContainer}>
-                        <label for="collegeLocation">Where is your college located?*</label>
+                        <label htmlFor="collegeLocation">Where is your college located?*</label>
                         <input
                             className={EducationalQualificationsStyles.wSmall}
                             type="text"
                             id="collegeLocation"
+                            value={location}
                             disabled={props.review}
                             onChange={(e) => {
                                 setLocation(e.target.value);

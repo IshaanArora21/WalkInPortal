@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  font-family: "Quicksand";
+}
+
+.dropDown {
+  background-color: rgb(219, 239, 255);
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.dropDown span {
+  margin-left: 16px;
+}
+
+.dd_img_container {
+  height: 56px;
+  width: 32px;
+  border-left: 2px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.stepInputs {
+  background-color: rgb(255, 255, 255);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.wSmall {
+  width: 180px;
+}
+
+.doubleInputContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 24px;
+}
+
+.singleInputContainer {
+  flex: 1;
+}
+
+.specificWidth {
+  width: 452px;
+}
+
+.flex16 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.singleInputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.singleInputContainer label {
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+}
+
+.singleInputContainer input,
+.singleInputContainer select {
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+  padding-bottom: 4px;
+  font-size: 16px;
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.singleInputContainer input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.wSmall {
+  width: 180px;
+}
+
+.applicantTypeContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 24px;
+}
+
+.applicantType {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+}
+
+.applicantType input[type=radio] {
+  width: 20px;
+  height: 24px;
+  accent-color: rgb(31, 122, 84);
+}
+
+.applicantType label {
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+}
+
+.technologiesContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.technologiesContainerLabel {
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+}
+
+.singleCheckboxContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 9px;
+}
+.singleCheckboxContainer label {
+  font-family: "Quicksand";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.singleCheckboxContainer input[type=checkbox] {
+  background-color: black;
+  padding: 10px;
+  width: 18px;
+  height: 24px;
+  margin: 0px;
+  accent-color: rgb(31, 122, 84);
+}
+
+.radioContainerLabel {
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  padding-bottom: 12px;
+}
+
+.radioContainerOptions {
+  margin-top: 13px;
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 24px;
+}
+
+.singleRadioContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 8px;
+}
+
+.singleRadioContainer input[type=radio] {
+  width: 20px;
+  height: 24px;
+  accent-color: rgb(31, 122, 84);
+  margin: 0px;
+}/*# sourceMappingURL=ProfessionalQualifications.module.css.map */

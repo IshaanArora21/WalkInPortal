@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  margin: 0;
+  font-family: "Quicksand";
+}
+
+.loginMainContainer {
+  background-color: rgb(238, 238, 238);
+  min-height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.loginMainContainer h1 {
+  text-align: center;
+  margin: 0px;
+  font-size: 24px;
+}
+
+.loginContainer {
+  background: rgb(255, 255, 255);
+  padding: 24px 32px;
+  width: 424px;
+  border-top: 4px solid rgb(58, 199, 236);
+  border-radius: 2px 2px 0px 0px;
+}
+
+.loginContainer :first-child {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.loginFilledContainer {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
+}
+
+.inputField {
+  position: relative;
+}
+
+.inputField > img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.loginInput {
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100%;
+  font-size: 16px;
+}
+
+.loginInput:active {
+  outline: none;
+}
+
+.inputForget {
+  cursor: pointer;
+  align-self: flex-end;
+  text-decoration: none;
+  color: rgb(31, 122, 84);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.rememberMe {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 26px;
+  gap: 5px;
+}
+
+.rememberMe input[type=checkbox] {
+  height: 24px;
+  width: 24px;
+  accent-color: rgb(31, 122, 84);
+}
+
+.loginButtonContainer > button {
+  cursor: pointer;
+  background-color: rgb(63, 210, 139);
+  font-size: 14px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+  width: 216px;
+  height: 40px;
+  border: none;
+  margin: 34px auto 24px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.registerUser {
+  text-align: center;
+}
+
+.registerUser > p {
+  margin: 0px;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.moreOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.moreOptions > a {
+  color: rgb(31, 122, 84);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.splitter {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  height: 18px;
+  width: 0px;
+}
+
+@media screen and (max-width: 500px) {
+  .login_mainContainer .login_container {
+    background: rgb(255, 255, 255);
+    padding: 20px 16px;
+    width: 311px;
+  }
+}/*# sourceMappingURL=Login.module.css.map */

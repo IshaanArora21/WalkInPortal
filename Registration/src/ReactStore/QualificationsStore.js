@@ -1,0 +1,48 @@
+import { create } from "zustand";
+
+const useQualificationStore = create((set) => ({
+  percentage: "65",
+  year: "2020",
+  qualification: "Bachelor in Technology (B.Tech)",
+  stream: "Information Technology",
+  college: "Pune Institute of Technology (PIT)",
+  otherCollege: "",
+  location: "Pune",
+  isFresher: false,
+  experienceYear: "",
+  currentCtc: "",
+  expectedCtc: "",
+  noticePeriod: false,
+  noticeEndDate: "",
+  noticeDuration: 0,
+  appliedTest: false,
+  appliedRole: "",
+  otherExpertiseTechnologies: "",
+  otherFamiliarTechnologies: "",
+  expertiseTechnology: ["Javascript"],
+  familiarTechnology: ["React", "Javascript"],
+  setPercentage: (value) => set({ percentage: value }),
+  setYear: (value) => set({ year: value }),
+  setQualification: (value) => set({ qualification: value }),
+  setStream: (value) => set({ stream: value }),
+  setCollege: (value) => set({ college: value }),
+  setOtherCollege: (value) => set({ otherCollege: value }),
+  setLocation: (value) => set({ location: value }),
+  setIsFresher: (value) => set({ isFresher: value }),
+  setExperienceYear: (value) => set({ experienceYear: value }),
+  setCurrentCtc: (value) => set({ currentCtc: value }),
+  setExpectedCtc: (value) => set({ expectedCtc: value }),
+  setNoticePeriod: (value) => set({ noticePeriod: value }),
+  setNoticeEndDate: (value) => set({ noticeEndDate: value }),
+  setNoticeDuration: (value) => set({ noticeDuration: value }),
+  setAppliedTest: (value) => set({ appliedTest: value }),
+  setAppliedRole: (value) => set({ appliedRole: value }),
+  setOtherExpertiseTechnologies: (value) =>
+    set({ otherExpertiseTechnologies: value }),
+  setOtherFamiliarTechnologies: (value) =>
+    set({ otherFamiliarTechnologies: value }),
+  setExpertiseTechnology: (value) => set({ expertiseTechnology: value }),
+  setFamiliarTechnology: (value) => set({ familiarTechnology: value }),
+}));
+
+export default useQualificationStore;

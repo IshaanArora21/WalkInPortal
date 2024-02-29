@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf") format("woff2");
+}
+body {
+  font-family: "Quicksand";
+}
+
+.singleMainHeaderComponent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px 24px 0px;
+}
+
+.mainEditComponent {
+  border: none;
+  cursor: pointer;
+  font-family: quicksand;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  gap: 9px;
+  color: rgb(31, 122, 84);
+}
+
+.mainEditComponent img {
+  height: 18px;
+  width: 18px;
+}
+
+.singleMainHeaderComponent .highlighted {
+  border: 2px solid red;
+  border-radius: 2px;
+}
+
+.stepMovingButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0px 21px;
+}
+
+.nextPreviousButton {
+  cursor: pointer;
+  width: 90px;
+  height: 28px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  border: none;
+  background-color: rgb(63, 210, 139);
+  color: rgb(31, 40, 52);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Quicksand";
+}/*# sourceMappingURL=Review.module.css.map */

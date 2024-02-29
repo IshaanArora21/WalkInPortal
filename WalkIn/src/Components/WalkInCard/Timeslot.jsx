@@ -1,6 +1,46 @@
-import React from "react"
+import React,{useState,useEffect} from "react"
 import TimeSlotStyles from "./Timeslot.module.scss"
-export default function Timeslot(props) {
+import { useDriveStore } from "../../ReactStore/Store";
+export default function Timeslot({driveDetails}) {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const { applyDrive, setApplyDrive } = useDriveStore();
+
+  useEffect(() => {
+    setApplyDrive({});
+  }, []);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    setApplyDrive({...applyDrive,updatedResume:file.name});
+  };
+
+  const handleTimeSlotChange = (e) => {
+    const selectedTimeSlot = Number(e.target.value);
+    setApplyDrive({ ...applyDrive, timeSlot: selectedTimeSlot });
+  };
+
+  const handleJobRoleChange = (e) => {
+    const selectedJobRole = Number(e.target.value);
+    const isChecked = e.target.checked;
+
+    let updatedJobRoles = applyDrive.jobRoles || [];
+
+    if (isChecked) {
+      if (!updatedJobRoles.includes(selectedJobRole)) {
+        updatedJobRoles = [...updatedJobRoles, selectedJobRole];
+      }
+    } else {
+      updatedJobRoles = updatedJobRoles.filter(
+        (role) => role !== selectedJobRole
+      );
+    }
+
+    setApplyDrive({ ...applyDrive, jobRoles: updatedJobRoles });
+  };
+
+  console.log(applyDrive);
+
   return (
     <div className={TimeSlotStyles.mainComponent}>
       <div className={TimeSlotStyles.timeSlotContainer}>
@@ -10,14 +50,16 @@ export default function Timeslot(props) {
           <span className={TimeSlotStyles.radioContainerLabel}>Select a Time Slot :</span>
 
           <div className={TimeSlotStyles.radioContainerOptions}>
-            {props.timings?.map((slot, index) => (
+            {driveDetails.time_Slots?.map((slot, index) => (
               <div key={index} className={TimeSlotStyles.singleRadioContainer}>
                 <input
                   type="radio"
                   name="isInNoticePeriod"
-                  value={slot} // Assuming 'slot' contains the value for the radio button
+                  value={slot.id}
+                  onChange={handleTimeSlotChange}
+                  // checked={props.selectedTimings.includes(slot.id)}
                 />
-                <label htmlFor={`isInNoticePeriod${index}`}>{slot}</label>
+                <label htmlFor={`isInNoticePeriod${index}`}>{slot.slot_timings}</label>
               </div>
             ))}
           </div>
@@ -29,16 +71,19 @@ export default function Timeslot(props) {
         <div className={TimeSlotStyles.technologiesContainer}>
           <span className={TimeSlotStyles.technologiesContainerLabel}>Select Your Preference :</span>
 
-          {props.job_Roles?.map((role, index) => (
+          {driveDetails.job_Roles?.map((role, index) => (
+
             <div className={TimeSlotStyles.singleCheckboxContainer}>
               <div key={index}>
                 <input
                   type="checkbox"
-                  id={`checkbox_job_role_${index}`} 
-                  value={role.job_title} 
+                  id={`checkbox_job_role_${index}`}
+                  value={role.id}
+                  onChange={handleJobRoleChange}
                 />
-                <label htmlFor={`checkbox_job_role_${index}`}>{role.job_title}</label>
+                
               </div>
+              <label htmlFor={`checkbox_job_role_${index}`}>{role.job_title}</label>
             </div>
           ))}
 
@@ -55,7 +100,13 @@ export default function Timeslot(props) {
             />
             Upload Resume
           </label>
-          <input type="file" accept=".pdf" id="input_file" style={{ display: "none" }} />
+          <input
+            type="file"
+            accept=".pdf"
+            id="input_file"
+            style={{ display: "none" }}
+            onChange={handleFileChange}
+          />
         </div>
       </div>
     </div>
